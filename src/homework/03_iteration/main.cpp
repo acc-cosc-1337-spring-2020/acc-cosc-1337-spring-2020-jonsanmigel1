@@ -2,6 +2,7 @@
 
 //write using statements
 
+//Testing if changes were made 1/30/2020
 
 /*
 Write code that prompts user to enter 1 for Get GC Content, 

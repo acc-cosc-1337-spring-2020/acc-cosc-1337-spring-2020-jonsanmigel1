@@ -6,7 +6,11 @@ Calculate GC content:
 Iterate string count Gs and Cs, divide count by string length.
 Return quotient.
 */
+int get_gc_content(const string astring)
+{
 
+	
+}
 
 
 
