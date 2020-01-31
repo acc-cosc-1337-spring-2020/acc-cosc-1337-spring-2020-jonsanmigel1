@@ -14,7 +14,7 @@ returns 120
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
 
-void factorial(int num)
+int factorial(int num)
 {
 	int total = 1;
 	for (int i = 1; i < num + 1; i++)
