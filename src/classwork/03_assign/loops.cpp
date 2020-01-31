@@ -25,4 +25,6 @@ void factorial(int num)
 		cout << total << endl;
 
 	}
+
+	return total;
 }
