@@ -13,6 +13,9 @@ test after fail to pull 1/31
 
 DON'T FORGET TO WRITE TEST CASE.  See file loop_test.cpp
 */
+#include "loops.h"
+#include <iostream>
+using namespace std;
 
 int factorial(int num)
 {

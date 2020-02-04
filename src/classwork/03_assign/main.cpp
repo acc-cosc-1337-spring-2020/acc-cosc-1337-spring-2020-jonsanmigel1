@@ -1,7 +1,8 @@
 
-#include <iostream>
-#include 'loops.cpp'
-using namespace std;
+
+
+#include "loops.h"
+
 
 //write using statements for cin and cout
 
@@ -14,8 +15,7 @@ factorial.  Also, loop continues as long as user wants to.
 int main() 
 {
 	factorial(7);
-	char yes = 'y';
-	char no = 'n';
+	
 
 
 	return 0;

@@ -1,3 +1,4 @@
 //Write prototype for function factorial that accepts an int num
 //and returns an int
-int prototype(int num)
+
+int factorial(int);
