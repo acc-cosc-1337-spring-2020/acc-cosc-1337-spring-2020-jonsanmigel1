@@ -25,9 +25,10 @@ int factorial(int num)
 
 		total = i * total;
 		cout << i << endl;
-		cout << total << endl;
+		//cout << "The total is"<<total << endl;
 
 	}
+	cout << "The total is" << total << endl;
 
 	return total;
 }
