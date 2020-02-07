@@ -11,5 +11,9 @@ TEST_CASE("Valvulate pay ")
 {
 	REQUIRE(gross_pay(50, 10) == 550);
 	REQUIRE(gross_pay(43, 13.50) == 600.75);
+	REQUIRE(gross_pay(10, 15) == 150);
+	REQUIRE(gross_pay(5, 20.0) == 100);
+	REQUIRE(gross_pay(20, 10) == 600.75);
+
 
 }
