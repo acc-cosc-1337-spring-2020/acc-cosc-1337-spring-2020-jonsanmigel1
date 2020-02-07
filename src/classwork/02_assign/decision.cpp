@@ -2,8 +2,17 @@
 int gross_pay(double HOURS, double HOURLY_RATE)
 {
 	double product;
-	product = HOURS * HOURLY_RATE;
-	cout << "Gross pay :  " << product << endl;
-	return product;
+	double overtimepay;
 
+	if (HOURS > 40)
+	{
+
+		overtimepay = (HOURS - 40.0)*1.5*HOURLY_RATE + 40.0 * HOURLY_RATE;
+		return overtimepay;
+	}
+	else
+	{
+		product = HOURS * HOURLY_RATE;
+		return product;
+	}
 }
