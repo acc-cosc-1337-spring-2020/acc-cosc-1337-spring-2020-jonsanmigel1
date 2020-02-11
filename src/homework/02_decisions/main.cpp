@@ -37,6 +37,7 @@ int main()
 	int total_credit_hours = 0;
 	string letter_grade;
 	int credit_hours, sum_credit_hours = 0, sum_credit_points = 0;
+	int total_credit_points = 0;
 	//Ask 1
 	cout << "Enter letter grade: ";
 	cin >> letter_grade;
@@ -100,7 +101,16 @@ int main()
 		 << setw(2) << list_of_credit_hours[2] << setw(20) << list_of_letter_grade[2]<<endl;
 		 */
 	
-	cout <<"Total\n" << total_credit_hours << endl;
+	cout <<"Total\n" << total_credit_hours;
+	
+	for (int i = 0; i < 3; i++)
+	{
+		total_credit_points = list_of_credit_points[i] + total_credit_points;
+
+
+	}
+	cout << setw(60)<<total_credit_points;
+	
 
 	return 0;
 }

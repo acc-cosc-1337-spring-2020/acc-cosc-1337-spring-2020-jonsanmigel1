@@ -49,6 +49,7 @@ double calculate_gpa(int credit_hours, double credit_points)
 	if (credit_hours == 0 || credit_points == 0)
 	{
 		cout << "Division by 0 Cannot be executed";
+		return -1;
 	}
 	else
 	{
