@@ -1,6 +1,6 @@
 //Write the include statement for types.h here
 #include "types.h"
-#include <process.h>
+
 //Write include for capturing input from keyboard and displaying output to screen
 #include<iostream>
 
