@@ -21,16 +21,6 @@ TEST_CASE("Check if prgram runs correctly")
 	REQUIRE(calculate_gpa(120, 390) == 3.25);
 	REQUIRE(calculate_gpa(120, 390) == 3.25);
 	REQUIRE(calculate_gpa(90, 180) == 2.00);
-
-
-
-
-
-
-
-	
-
-
-
+	REQUIRE(calculate_gpa(0, 180) == -1);
 }	
 
