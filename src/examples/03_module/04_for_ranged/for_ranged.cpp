@@ -1,6 +1,7 @@
 #include "for_ranged.h"
 #include<iostream>
 #include<vector>
+#include <string>
 
 using std::vector;
 
@@ -20,6 +21,7 @@ void loop_string_w_index(const std::string & str)
 	for (int i = 0; i < str.length(); i++)
 	{
 		std::cout << str[i] << "\n";
+		//You are actually getting the memory address off the str[i]
 	}
 		
 
@@ -39,13 +41,37 @@ s
 t
 */
 
-void loop_string_w_auto(const std::string & str)
+void loop_string_w_auto(const std::string &str)
 {
 	for (auto ch : str)
 	{
 		std::cout << ch << "\n";
 	}
+}
 
 
+
+
+
+
+void loop_string_w_auto_value(std::string & str)
+{
+	for (auto ch : str)
+	{
+		ch = 'z';
+	}
+
+
+}
+
+void loop_string_w_auto_ref(std::string &str)
+{
+	//want the address of each character
+
+	for (auto &ch : str)
+	{
+		//this will change the actual value of the string it will equal 'zzz'
+		ch = 'z';
+	}
 }
 
