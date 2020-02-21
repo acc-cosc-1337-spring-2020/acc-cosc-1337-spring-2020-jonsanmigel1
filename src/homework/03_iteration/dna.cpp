@@ -1,5 +1,7 @@
 #include "dna.h"
 #include<iostream>
+#include <vector>
+#include <iostream>
 
 
 using std::endl;
@@ -54,7 +56,7 @@ string get_reverse_string(string astring)
 		name_rev.push_back(original[count]);
 		count = count - 1;
 	}
-	cout << name_rev;
+	//cout << name_rev;
 	return astring;
 }
 
@@ -70,32 +72,40 @@ c. return string
 
 */
 string get_dna_complement(string astring)
-{
-	string complement;
-	string save_results;
-	save_results = get_reverse_string(astring);
+{	
+	
+	//string save_results=("KKKKKKKKKK");
+	
+	//std::vector<char>list_of_compliment;
+	//char list_of_compliment [10]= {};
+	string save_results = get_reverse_string(astring);
 	for (int i = 0; i < save_results.length(); i++)
 	{
-		if (i == 'A')
+		if (save_results[i] == 'A')
 		{
-			i = 'T';
+			save_results[i]='T';
 		}
-		if (i == 'T')
+		else if (save_results[i] == 'T')
 		{
-			i = 'A';
+			save_results[i] = 'A';
 		}
-		if (i == 'C')
+		else if (save_results[i] == 'C')
 		{
-			i = 'G';
+			save_results[i] = 'G';
 		}
-		if (i == 'G')
+		else if (save_results[i] == 'G')
 		{
-			i = 'C';
-		}
+			save_results[i] = 'C';
 
-
+		}
+		
 		
 	}
-	return save_results;
+	return(save_results);
+	
+	//cout << endl<< list_of_compliment;
+	//cout << "the complement is" << list_of_compliment;
+	
+
 }
 
