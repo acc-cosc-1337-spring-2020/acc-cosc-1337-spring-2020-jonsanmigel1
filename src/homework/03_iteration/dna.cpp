@@ -18,38 +18,6 @@ int get_gc_content(const string astring)
 Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
-string get_reverse_string(string string1)
-{
-
-	string unknown_str = string1;
-
-	string name_rev;
-
-	int count = 2; (or unknown_str.length - 1)
-		//Remember indexing starts from 0 
-	for (int i = 0; i < unknown_str.length(); i++)
-	{
-
-		name_rev.push_back(string1[count]);
-		count = count - 1;
-
-	}
-	cout << name_rev;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

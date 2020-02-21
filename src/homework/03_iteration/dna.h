@@ -10,7 +10,6 @@ a const reference string parameter and returns a double
 Write prototype for function get_reverse_string that 
 accepts a string parameter and returns a string
 */
-string get_reverse_string(string )
 
 
 /*
