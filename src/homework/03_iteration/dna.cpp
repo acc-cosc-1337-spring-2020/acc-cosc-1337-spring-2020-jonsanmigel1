@@ -31,8 +31,8 @@ double get_gc_content(const string &input)
 		}
 
 	}
-	percent = (count / length) * 100;
-	cout << percent;
+	percent = (count / length);
+	cout << percent<<endl;
 
 	return percent;
 	
@@ -44,9 +44,9 @@ double get_gc_content(const string &input)
 Write code for function get_reverse_string that
 accepts a string parameter and returns a string reversed.
 */
-string get_reverse_string(string astring)
+string get_reverse_string(string input)
 {
-	string original = astring;
+	string original = input;
 	string name_rev;
 	int count = original.length() - 1;
 
@@ -57,7 +57,7 @@ string get_reverse_string(string astring)
 		count = count - 1;
 	}
 	//cout << name_rev;
-	return astring;
+	return name_rev;
 }
 
 
@@ -79,6 +79,7 @@ string get_dna_complement(string astring)
 	//std::vector<char>list_of_compliment;
 	//char list_of_compliment [10]= {};
 	string save_results = get_reverse_string(astring);
+	
 	for (int i = 0; i < save_results.length(); i++)
 	{
 		if (save_results[i] == 'A')
@@ -100,8 +101,12 @@ string get_dna_complement(string astring)
 		}
 		
 		
+		
+		
 	}
+	cout << endl<<save_results;
 	return(save_results);
+	
 	
 	//cout << endl<< list_of_compliment;
 	//cout << "the complement is" << list_of_compliment;

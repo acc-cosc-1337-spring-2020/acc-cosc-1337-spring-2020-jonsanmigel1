@@ -38,10 +38,12 @@ int main()
 		if (choice == "2")
 		{
 			get_dna_complement(DNA);
+			
 		}
-		cout << "Would you like to continue? Type yes to continue";
+		cout << "\nWould you like to continue? Type yes to continue";
 		cin >> reloop;
 	} while (reloop == "yes");
+	
 
 	return 0;
 }
