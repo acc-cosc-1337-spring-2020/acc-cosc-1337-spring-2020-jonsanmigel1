@@ -32,7 +32,7 @@ double get_gc_content(const string &input)
 
 	}
 	percent = (count / length);
-	cout << percent<<endl;
+	
 
 	return percent;
 	
@@ -104,7 +104,7 @@ string get_dna_complement(string astring)
 		
 		
 	}
-	cout << endl<<save_results;
+	
 	return(save_results);
 	
 	
