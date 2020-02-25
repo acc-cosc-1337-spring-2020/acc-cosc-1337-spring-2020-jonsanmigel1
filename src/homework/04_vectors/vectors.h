@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <vector>
 
 /*
 Write a value return function prototype get_max_from_vector with a 
@@ -19,7 +20,7 @@ thatgiven a number returns true if prime or false if not prime
 @param number: Any whole number
 @return: bool if prime False if not
 */
-
+bool is_prime(int paramnumber);
 
 
 /*
@@ -30,3 +31,4 @@ the number
 @param int integer value
 @return vector of ints containing prime values up to a value
 */
+std::vector<int> vector_of_primes(int integer_value);

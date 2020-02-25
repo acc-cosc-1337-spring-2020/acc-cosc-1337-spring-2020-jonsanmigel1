@@ -1,3 +1,5 @@
+
+#include "vectors.cpp"
 /*
 use a vector of int with values 8, 4, 20, 88, 66, 99
 
@@ -9,6 +11,8 @@ Program continues until user decides to exit.
 */
 int main() 
 {
+	vector_of_primes(5);
+	std::vector<int> my_vector = { 0,3,6,9,12 };
 
 	return 0;
 }

@@ -1,4 +1,9 @@
-include "vectors.h"
+#include "vectors.h"
+#include <vector>
+#include <string>
+#include <iostream>
+
+using std::cout; 
 
 /*
 Write a value return function get_max_from_vector with a const reference 
@@ -34,19 +39,18 @@ bool is_prime(int paramnumber)
 	if (paramnumber % i == 0)
 	{
 		isPrime = false;
-		return isprime;
-
-	}
-
-	if (isPrime)
-	{
-		cout << "This is a prime number";
-		return isprime;
+		return isPrime;
 
 	}
 
 	else
-		cout << "This is not a prime number";
+	{
+		cout << "This is a prime number";
+		return isPrime;
+
+	}
+
+	
 
 	
 }
@@ -68,3 +72,16 @@ Example given number 10 returns a vector with elements 2,3,5,7,
 Make sure to use the is_prime function to determine if current 
 number is prime.
 */
+
+std::vector<int> vector_of_primes(int aNumber)
+{
+	std::vector<int> aVector;
+	for (int i = 0; i < aNumber; i++)
+
+		aVector.push_back(i * 3);
+
+	return aVector;
+	//result 0,3,6,9,12
+
+
+}
