@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-
+using std::cin;
 using std::cout; 
 
 /*
@@ -79,6 +79,7 @@ std::vector<int> vector_of_primes(int aNumber)
 	for (int i = 0; i < aNumber; i++)
 
 		aVector.push_back(i * 3);
+	cout << vector_of_primes;
 
 	return aVector;
 	//result 0,3,6,9,12
