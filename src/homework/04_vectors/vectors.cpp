@@ -28,31 +28,28 @@ given a number returns true if prime or false if not prime
 @param number: Any whole number
 @return: bool if prime False if not
 */
-bool is_prime(int paramnumber)
+bool is_prime(int num)
 {
-	int i = 2;
-	bool isPrime = true;
 
-
-
-
-	if (paramnumber % i == 0)
+	bool flag = true;
+	for (int i = 2; i <= num / 2; i++)
 	{
-		isPrime = false;
-		return isPrime;
 
+		if (num % i == 0)
+		{
+
+
+			flag = false;
+
+		}
+	}
+	if (flag == true)
+	{
+		
 	}
 
-	else
-	{
-		cout << "This is a prime number";
-		return isPrime;
 
-	}
-
-	
-
-	
+	return flag;
 }
 
 
@@ -75,11 +72,30 @@ number is prime.
 
 std::vector<int> vector_of_primes(int aNumber)
 {
+	int num = 2;
 	std::vector<int> aVector;
-	for (int i = 0; i < aNumber; i++)
+	std::vector<int> newVector;
+	for (int i = 2; i < aNumber; i++)
+	{
 
-		aVector.push_back(i * 3);
-	cout << vector_of_primes;
+		if (is_prime(i))
+		{
+			aVector.push_back(i);
+		}
+		
+		
+
+
+		
+	}
+	for (int i = 0; i < aVector.size(); i++)
+	{
+		cout << aVector[i];
+	}
+	
+	
+	
+	
 
 	return aVector;
 	//result 0,3,6,9,12

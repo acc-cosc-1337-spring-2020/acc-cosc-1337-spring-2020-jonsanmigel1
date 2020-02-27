@@ -1,5 +1,8 @@
 
-#include "vectors.cpp"
+#include "vectors.h"
+#include <iostream>
+using std::cout;
+using std::cin;
 /*
 use a vector of int with values 8, 4, 20, 88, 66, 99
 
@@ -34,12 +37,20 @@ int main()
 		}
 		else if (choice == 2)
 		{
-			
 			int anumber;
+			cout << "Please enter a prime Number";
+			cin >> anumber;
+			vector_of_primes(anumber);
+
+			
+			
 			
 			
 			
 		}
+		cout << "Would you like to continue?Press y for yes:  ";
+		cin >> keep_going;
+
 		
 		
 
