@@ -74,7 +74,7 @@ std::vector<int> vector_of_primes(int aNumber)
 {
 	int num = 2;
 	std::vector<int> aVector;
-	std::vector<int> newVector;
+	
 	for (int i = 2; i < aNumber; i++)
 	{
 
