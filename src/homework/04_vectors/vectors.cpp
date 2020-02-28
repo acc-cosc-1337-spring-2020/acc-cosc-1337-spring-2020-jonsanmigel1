@@ -15,7 +15,7 @@ vector of intsparameter that returns the max value in a vector
 int get_max(const std::vector<int> &paramnumbers)
 {
 	int max = *max_element(paramnumbers.begin(), paramnumbers.end());
-	cout << "The Maximum Value is" << max;
+	
 	return max;
 
 }
@@ -98,7 +98,7 @@ std::vector<int> vector_of_primes(int aNumber)
 	
 
 	return aVector;
-	//result 0,3,6,9,12
+	
 
 
 }
