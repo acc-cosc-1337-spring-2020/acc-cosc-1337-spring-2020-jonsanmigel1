@@ -9,14 +9,28 @@ void BankAccount::deposit(int amount)
 		balance += amount;
 		//We know we want to modify balance so we dont declare const
 	}
+	else
+	{
+		throw Invalid("Amount must be greater than 0");
+	}
 
 }
 
 void BankAccount::withdraw(int amount)
 {
-	if (amount > 0 && amount <= balance)
+	if (amount < 0 )
+	{
+		throw Invalid("Amount must be greater than 0");
+	}
+	else if(amount > balance)
+	{
+		throw Invalid("insufficient funds");
+
+	}
+	else
 	{
 		balance -= amount;
+
 	}
 
 
