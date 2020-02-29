@@ -42,10 +42,13 @@ int main()
 			cout << "Please enter a prime Number";
 			cin >> anumber;
 			cout << "\nHere is the list of Primes:   ";
-			vector_of_primes(anumber);
+			auto primes = vector_of_primes(anumber);
 
-			
-			
+			for (auto prime : primes) 
+			{
+				cout << prime << " ";
+			}
+			cout << "\n";
 			
 			
 			

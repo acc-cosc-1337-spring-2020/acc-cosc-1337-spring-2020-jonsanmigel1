@@ -88,10 +88,6 @@ std::vector<int> vector_of_primes(int aNumber)
 
 		
 	}
-	for (int i = 0; i < aVector.size(); i++)
-	{
-		cout << aVector[i];
-	}
 	
 	
 	
