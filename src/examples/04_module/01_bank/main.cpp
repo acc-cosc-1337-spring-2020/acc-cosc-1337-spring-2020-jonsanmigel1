@@ -5,8 +5,9 @@ using std::cin;
 int main()
 {
 	//auto num{ 0 };//Initialize the variable give the variable a defualt initialization
-
+	BankAccount a(100);
 	BankAccount account(500);//create object
+	
 
 
 

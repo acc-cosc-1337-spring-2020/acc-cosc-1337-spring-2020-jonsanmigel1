@@ -43,4 +43,32 @@ TEST_CASE("Test Bank Account Withdraw")
 	REQUIRE(account.get_balance() == 450);
 
 }
+TEST_CASE("Test bank account default constructor balance 0")
+{	
+	//here you are calling default constructor with no paramaters as in bank_account.h
+	BankAccount account;
+	REQUIRE(account.get_balance() == 0);
+
+}
+TEST_CASE("Test BankAccount initial open deposit >=25")
+{
+	
+	BankAccount account;
+	REQUIRE(account.get_balance() == 0);
+
+	account.open(25);
+	REQUIRE(account.get_balance()==25);
+
+}
+TEST_CASE("Test BankAccount initial open deposit <25")
+{
+
+	BankAccount account;
+	REQUIRE(account.get_balance() == 0);
+
+	
+	REQUIRE_THROWS_AS(account.open(24),Invalid);
+
+}
+
 
