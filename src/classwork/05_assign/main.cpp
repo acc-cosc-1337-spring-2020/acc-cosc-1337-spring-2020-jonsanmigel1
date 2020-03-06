@@ -27,10 +27,11 @@ int main()
 	rectangle.push_back(area1);
 	rectangle.push_back(area2);
 	rectangle.push_back(area3);
-
+	
 	for (auto x : rectangle)
 	{
-		std::cout << x.get_area() << "\n";
+		cout << x;
+		//std::cout << x.get_area() << "\n";
 		total = total + x.get_area();
 
 

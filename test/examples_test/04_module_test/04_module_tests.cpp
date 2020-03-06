@@ -70,5 +70,14 @@ TEST_CASE("Test BankAccount initial open deposit <25")
 	REQUIRE_THROWS_AS(account.open(24),Invalid);
 
 }
+TEST_CASE("Test BankAccount static rate initialization")
+{
+
+	//we can access static variables without an instance of a class
+	BankAccount account;
+	REQUIRE(account.get_rate() == .025);
+	
+
+}
 
 

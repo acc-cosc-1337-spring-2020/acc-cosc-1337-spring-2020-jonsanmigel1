@@ -17,5 +17,12 @@ void Rect::calculate_area()
 
 
 }
+std::ostream& operator<<(std::ostream& out, const Rect & b)
+{
+
+	//out << "Area is" << area.calculate_area << "\n";
+	out << "Area is" << b.area << "\n";
+	return out;
+}
 
 

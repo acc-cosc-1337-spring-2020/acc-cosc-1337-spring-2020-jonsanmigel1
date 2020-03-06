@@ -4,13 +4,14 @@ using std::cout;
 using std::cin;
 int main()
 {
-	//auto num{ 0 };//Initialize the variable give the variable a defualt initialization
-	BankAccount a(100);
-	BankAccount account(500);//create object
 	
-
-
-
+	//auto num{ 0 };//Initialize the variable give the variable a defualt initialization
+	
+	BankAccount account(500);//create object
+	std::cin >> account;
+	
+	std::cout << account;
+	display_balance(account);
 
 	auto balance = account.get_balance();//this balance variable is not the same as our class they are 2 different variables in memory
 

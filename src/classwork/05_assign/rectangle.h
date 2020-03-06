@@ -12,6 +12,7 @@ class Rect
 public:
 	Rect(int w, int h) : width{ w }, height{ h } {calculate_area(); }
 	int get_area() const { return area; }
+	friend::std::ostream & operator<<(std::ostream& out, const Rect& b);
 
 private:
 	int area;
