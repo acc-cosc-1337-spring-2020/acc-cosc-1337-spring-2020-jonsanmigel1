@@ -1,6 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "bank_account.h"
+#include "checking_account.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -77,6 +78,22 @@ TEST_CASE("Test BankAccount static rate initialization")
 	BankAccount account;
 	REQUIRE(account.get_rate() == .025);
 	
+
+}
+TEST_CASE("Test checking account constructor")
+{
+
+	//we can access static variables without an instance of a class
+	CheckingAccount account(500);
+	REQUIRE(account.get_balance()==512);
+
+
+}
+TEST_CASE("Test checking account get balance")
+{
+	//here you are calling default constructor with no paramaters as in bank_account.h
+	CheckingAccount account(150);
+	REQUIRE(account.get_balance() == 153);
 
 }
 

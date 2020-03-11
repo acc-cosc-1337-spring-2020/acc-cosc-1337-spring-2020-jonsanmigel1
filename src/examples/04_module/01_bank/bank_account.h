@@ -1,6 +1,10 @@
 //bank_account.h
 #include <string>
 #include <iostream>
+
+//header guards prevents compiler from 
+#ifndef BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H
 class BankAccount
 {
 public:
@@ -12,13 +16,16 @@ public:
 	void deposit(int amount); //create deposit prototype 
 	void withdraw(int amount);
 	void open(int amount);
-	double get_rate() { return rate; }
+	double get_rate() const { return rate; }
 	friend void display_balance(const BankAccount& b);//not part of class but we need to decalre it here
 	friend std::ostream& operator<<(std::ostream& out, const BankAccount& b);//Required syntax to use cout with a class
 	friend std::istream& operator>>(std::istream& in, BankAccount& b);
 
+protected:
+	int balance{ 0 };
+
 private:
-	int balance{ 0 };//withdraw deposit and bank account can read this variable, and can reasssign that variable
+	
 	const int min_balance_to_open{ 25 };
 	static double rate;//we cannot give a static variable a value inside the class
 	static double init_rate() { return .025; }
@@ -29,6 +36,11 @@ private:
 
 };
 
+#endif
+
+#ifndef INVALID_H
+#define INVALID_H
+
 class Invalid
 {
 public:
@@ -37,3 +49,4 @@ public:
 private:
 	std::string message;
 };
+#endif
