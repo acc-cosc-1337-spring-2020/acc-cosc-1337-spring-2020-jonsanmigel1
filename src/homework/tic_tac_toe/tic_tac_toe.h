@@ -11,13 +11,19 @@ public:
 	void start_game(string first_player);
 	void mark_board(int position);
 	string get_player() const { return next_player; }
+	string get_winner() { return winner; }
 	void display_board() const;
 	
 
 
 private:
+	bool check_column_win(std::vector<std::string> avector);
+	bool check_row_win(std::vector<std::string> avector);
+	bool check_diagnol_win(std::vector<std::string> avector);
 	bool check_board_full();
 	void clear_board();
+	void set_winner();//created 3//22
+	string winner;
 	string player;
 	string next_player;
 	void set_next_player();
