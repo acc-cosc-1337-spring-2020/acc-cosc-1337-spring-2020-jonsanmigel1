@@ -6,19 +6,20 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
-	
-	if(check_column_win() == true || check_diagnol_win() == true || check_row_win() == true)
+	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
 	return true;
 	}
-	else if (check_board_full() == false)
+	
+	else if (check_board_full()==false)
 	{
 		return false;
 	}
-	else if (check_board_full() == true)
+	else if (check_board_full()==true)
 	{
 		return true;
 	}
+	
 	
 	//return check_board_full();
 }

@@ -54,6 +54,7 @@ TEST_CASE("Start game with O gameflow")
 	REQUIRE(game.get_player() == "O");
 
 }
+
 /*
 TEST_CASE("Test game ends when board is full")
 {
