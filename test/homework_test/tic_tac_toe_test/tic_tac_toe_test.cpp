@@ -54,6 +54,7 @@ TEST_CASE("Start game with O gameflow")
 	REQUIRE(game.get_player() == "O");
 
 }
+/*
 TEST_CASE("Test game ends when board is full")
 {
 	TicTacToe game;
@@ -67,6 +68,27 @@ TEST_CASE("Test game ends when board is full")
 	game.mark_board(9);
 	REQUIRE(game.game_over() == true);
 }
+*/
+
+
+TEST_CASE("Test win by column")
+{
+	TicTacToe board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);//X        
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//O          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//X          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//O          
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//X
+	//X wins
+	REQUIRE(board.game_over() == true);
+}
+
 
 
 

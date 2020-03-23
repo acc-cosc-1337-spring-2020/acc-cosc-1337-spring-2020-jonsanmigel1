@@ -6,8 +6,21 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
-
-	return check_board_full();
+	
+	if(check_column_win() == true || check_diagnol_win() == true || check_row_win() == true)
+	{
+	return true;
+	}
+	else if (check_board_full() == false)
+	{
+		return false;
+	}
+	else if (check_board_full() == true)
+	{
+		return true;
+	}
+	
+	//return check_board_full();
 }
 
 void TicTacToe::start_game(string first_player)
@@ -77,12 +90,12 @@ void TicTacToe::clear_board()
 
 void TicTacToe::set_winner()
 {
-	if (player == "x")
+	if (player == "X")
 	{
-		winner = "o";
+		winner = "O";
 	}
 	else
-		winner == "x";
+		winner == "X";
 
 }
 
@@ -97,30 +110,30 @@ void TicTacToe::set_next_player()
 		next_player = "X";
 	}
 }
-bool TicTacToe::check_column_win(std::vector<std::string> avector)
+bool TicTacToe::check_column_win()
 {
-	if (avector[1] == "x" && avector[4] == "x" && avector[7] == "x")
+	if (pegs[1] == "X" && pegs[4] == "X" && pegs[7] == "X")
 	{
 		return true;
 	}
-	else if (avector[1] == "o" && avector[4] == "o" &&avector[7] == "o")
+	else if (pegs[1] == "O" && pegs[4] == "O" &&pegs[7] == "O")
 	{
 		return true;
 	}
 
-	else if (avector[0] == "x" && avector[3] == "x" && avector[6] == "x")
+	else if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
 	{
 		return true;
 	}
-	else if (avector[0] == "o" && avector[3] == "o" && avector[6] == "o")
+	else if (pegs[0] == "O" && pegs[3] == "O" && pegs[6] == "O")
 	{
 		return true;
 	}
-	else if (avector[2] == "x" && avector[5] == "x" && avector[8] == "x")
+	else if (pegs[2] == "X" && pegs[5] == "X" && pegs[8] == "X")
 	{
 		return true;
 	}
-	else if (avector[2] == "o" && avector[5] == "o" && avector[8] == "o")
+	else if (pegs[2] == "O" && pegs[5] == "O" && pegs[8] == "O")
 	{
 		return true;
 	}
@@ -133,29 +146,29 @@ bool TicTacToe::check_column_win(std::vector<std::string> avector)
 
 }
 
-bool TicTacToe::check_row_win(std::vector<std::string> avector)
+bool TicTacToe::check_row_win()
 {
-	if (avector[0] == "x" && avector[1] == "x" && avector[2] == "x")
+	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X")
 	{
 		return true;
 	}
-	else if (avector[0] == "o" && avector[1] == "o" &&avector[2] == "o")
+	else if (pegs[0] == "O" && pegs[1] == "O" &&pegs[2] == "O")
 	{
 		return true;
 	}
-	else if (avector[3] == "x" && avector[4] == "x" &&avector[5] == "x")
+	else if (pegs[3] == "X" && pegs[4] == "X" &&pegs[5] == "X")
 	{
 		return true;
 	}
-	else if (avector[3] == "o" && avector[4] == "o" &&avector[5] == "o")
+	else if (pegs[3] == "O" && pegs[4] == "O" &&pegs[5] == "O")
 	{
 		return true;
 	}
-	else if (avector[6] == "x" && avector[7] == "x" &&avector[8] == "x")
+	else if (pegs[6] == "X" && pegs[7] == "X" &&pegs[8] == "X")
 	{
 		return true;
 	}
-	else if (avector[6] == "o" && avector[7] == "o" &&avector[8] == "o")
+	else if (pegs[6] == "O" && pegs[7] == "O" &&pegs[8] == "O")
 	{
 		return true;
 	}
@@ -167,21 +180,21 @@ bool TicTacToe::check_row_win(std::vector<std::string> avector)
 
 }
 
-bool TicTacToe::check_diagnol_win(std::vector<std::string> avector)
+bool TicTacToe::check_diagnol_win()
 {
-	if (avector[0] == "x" && avector[4] == "x" && avector[8] == "x")
+	if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
 	{
 		return true;
 	}
-	else if (avector[0] == "o" && avector[4] == "o" &&avector[8] == "o")
+	else if (pegs[0] == "O" && pegs[4] == "O" &&pegs[8] == "O")
 	{
 		return true;
 	}
-	else if (avector[6] == "x" && avector[4] == "x" &&avector[2] == "x")
+	else if (pegs[6] == "X" && pegs[4] == "X" &&pegs[2] == "X")
 	{
 		return true;
 	}
-	else if (avector[6] == "o" && avector[4] == "o" &&avector[2] == "o")
+	else if (pegs[6] == "O" && pegs[4] == "O" &&pegs[2] == "O")
 	{
 		return true;
 	}

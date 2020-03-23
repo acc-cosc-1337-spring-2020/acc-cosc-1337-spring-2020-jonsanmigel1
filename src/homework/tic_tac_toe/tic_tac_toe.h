@@ -17,9 +17,9 @@ public:
 
 
 private:
-	bool check_column_win(std::vector<std::string> avector);
-	bool check_row_win(std::vector<std::string> avector);
-	bool check_diagnol_win(std::vector<std::string> avector);
+	bool check_column_win();
+	bool check_row_win();
+	bool check_diagnol_win();
 	bool check_board_full();
 	void clear_board();
 	void set_winner();//created 3//22
