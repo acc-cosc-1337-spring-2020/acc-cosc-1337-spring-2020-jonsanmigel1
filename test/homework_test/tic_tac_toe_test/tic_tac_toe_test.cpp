@@ -55,7 +55,7 @@ TEST_CASE("Start game with O gameflow")
 
 }
 
-/*
+
 TEST_CASE("Test game ends when board is full")
 {
 	TicTacToe game;
@@ -69,7 +69,7 @@ TEST_CASE("Test game ends when board is full")
 	game.mark_board(9);
 	REQUIRE(game.game_over() == true);
 }
-*/
+
 
 
 TEST_CASE("Test win by column")
