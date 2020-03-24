@@ -8,20 +8,15 @@ bool TicTacToe::game_over()
 {
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
-	return true;
-	}
-	
-	else if (check_board_full()==false)
-	{
-		return false;
-	}
-	else if (check_board_full()==true)
-	{
 		return true;
 	}
 	
-	
-	//return check_board_full();
+	else if (check_board_full())
+	{
+		return true;//tie
+	}
+		
+	return false;
 }
 
 void TicTacToe::start_game(string first_player)
