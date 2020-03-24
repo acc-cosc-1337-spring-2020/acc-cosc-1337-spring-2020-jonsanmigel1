@@ -55,7 +55,7 @@ TEST_CASE("Start game with O gameflow")
 
 }
 
-
+/*
 TEST_CASE("Test game ends when board is full")
 {
 	TicTacToe game;
@@ -64,11 +64,14 @@ TEST_CASE("Test game ends when board is full")
 	for (int i = 1; i < 9; i++)
 	{
 		game.mark_board(i);
+		
+		
 		REQUIRE(game.game_over() == false);
 	}
 	game.mark_board(9);
-	REQUIRE(game.game_over() == true);
+	REQUIRE(game.game_over() == true); 
 }
+*/
 
 
 
@@ -90,7 +93,25 @@ TEST_CASE("Test win by column")
 	REQUIRE(board.game_over() == true);
 }
 
+TEST_CASE("Test win by first Column")
+{
+	TicTacToe board;
+	board.start_game("X");
+	board.mark_board(1);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);//x
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);//o
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);//x
+	REQUIRE(board.game_over() == true);
 
+
+
+	
+}
 
 
 

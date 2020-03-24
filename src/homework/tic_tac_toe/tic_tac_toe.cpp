@@ -6,17 +6,17 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
+	
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
 		return true;
 	}
-	
 	else if (check_board_full())
 	{
-		return true;//tie
+		return true;
 	}
-		
 	return false;
+	
 }
 
 void TicTacToe::start_game(string first_player)
