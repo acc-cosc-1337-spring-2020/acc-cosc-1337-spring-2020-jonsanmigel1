@@ -45,10 +45,27 @@ void TicTacToe::start_game(string first_player)
 
 void TicTacToe::mark_board(int position)
 {
+	//I wrote this code/Tested while commenting out some stuff bwloe
+	//Still ended up with the same failing test case
+	/*
+	if (position >= 1 && position <= 9 && player == "X")
+	{
+		pegs[position - 1] = player;
+		TicTacToe::set_next_player();
+	}
+	else if (position >= 1 && position <= 9 && next_player == "O")
+	{
+		pegs[position - 1] = next_player;
+	}
+	*/
+
+	
 	if (position >= 1 && position <= 9)
 	{
+		
 
 	}
+	
 	else
 	{
 		throw Error("You can only choose from 1-9");

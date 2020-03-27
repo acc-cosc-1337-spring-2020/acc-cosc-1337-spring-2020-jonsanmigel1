@@ -225,6 +225,9 @@ TEST_CASE("Test win diagnolly from bottom left")
 	REQUIRE(board.game_over() == true);
 
 }
+
+
+
 TEST_CASE("Test no winnr")
 {
 	TicTacToe board;
@@ -233,9 +236,9 @@ TEST_CASE("Test no winnr")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(2);//O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(3);//x
+	board.mark_board(6);//x
 	REQUIRE(board.game_over() == false);
-	board.mark_board(6);//o
+	board.mark_board(3);//o
 	REQUIRE(board.game_over() == false);
 	board.mark_board(4);//x
 	REQUIRE(board.game_over() == false);
@@ -251,8 +254,6 @@ TEST_CASE("Test no winnr")
 	REQUIRE(board.game_over() == true);
 
 }
-
-
 
 
 

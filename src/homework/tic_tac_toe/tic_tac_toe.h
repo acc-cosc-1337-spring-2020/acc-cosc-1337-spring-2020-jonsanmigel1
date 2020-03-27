@@ -12,6 +12,7 @@ public:
 	void mark_board(int position);
 	string get_player() const { return next_player; }
 	string get_winner() { return winner; }
+	
 	void display_board() const;
 	
 
