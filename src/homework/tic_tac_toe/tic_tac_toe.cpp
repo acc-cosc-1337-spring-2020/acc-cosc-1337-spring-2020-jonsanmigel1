@@ -43,7 +43,7 @@ void TicTacToe::start_game(string first_player)
 	clear_board();
 }
 
-void TicTacToe::mark_board(int position)
+int TicTacToe::mark_board(int position)
 {
 	//I wrote this code/Tested while commenting out some stuff bwloe
 	//Still ended up with the same failing test case
@@ -58,13 +58,66 @@ void TicTacToe::mark_board(int position)
 		pegs[position - 1] = next_player;
 	}
 	*/
+	if(position <1 || position >9)
+	{
 
-	
+		throw Error("You can only choose from 1-9");
+
+	}
+	else if(player == "")
+	{
+		throw Error("Must start game, Player Cannot be empty");
+	}
+	else if (position >= 1 && position <= 9)
+	{
+		switch (count)
+		{
+		case(0):
+			pegs[position - 1] = player;
+			TicTacToe::set_next_player();
+
+			return count = count + 1;
+		case(1):
+			pegs[position - 1] = next_player;
+			return count = count + 1;
+		case(2):
+			pegs[position - 1] = player;
+			return count = count + 1;
+		case(3):
+			pegs[position - 1] = next_player;
+			return count = count + 1;
+		case(4):
+			pegs[position - 1] = player;
+			return count = count + 1;
+		case(5):
+			pegs[position - 1] = next_player;
+			return count = count + 1;
+		case(6):
+			pegs[position - 1] = player;
+			return count = count + 1;
+		case(7):
+			pegs[position - 1] = next_player;
+			return count = count + 1;
+		case(8):
+			pegs[position - 1] = player;
+			return count = count + 1;
+		case(9):
+			pegs[position - 1] = next_player;
+			return count = count + 1;
+
+
+
+		}
+
+	}
+
+	/*
 	if (position >= 1 && position <= 9)
 	{
 		
 
 	}
+	
 	
 	else
 	{
@@ -75,10 +128,14 @@ void TicTacToe::mark_board(int position)
 	{
 		throw Error("Must start game, Player Cannot be empty");
 	}
+	*/
 
-	pegs[position - 1] = player;
-	TicTacToe::set_next_player();
+	//pegs[position - 1] = player;
+	//TicTacToe::set_next_player();
+	
 }
+
+
 
 void TicTacToe::display_board() const
 {

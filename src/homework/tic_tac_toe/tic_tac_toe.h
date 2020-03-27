@@ -9,7 +9,8 @@ class TicTacToe
 public:
 	bool game_over();
 	void start_game(string first_player);
-	void mark_board(int position);
+	int mark_board(int position);
+	
 	string get_player() const { return next_player; }
 	string get_winner() { return winner; }
 	
@@ -18,6 +19,7 @@ public:
 
 
 private:
+	int count{ 0 };
 	bool check_column_win();
 	bool check_row_win();
 	bool check_diagnol_win();

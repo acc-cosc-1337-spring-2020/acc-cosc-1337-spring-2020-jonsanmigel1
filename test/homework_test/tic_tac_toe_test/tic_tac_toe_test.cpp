@@ -121,11 +121,11 @@ TEST_CASE("Test win by second Column")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(3);//O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(6);//x
+	board.mark_board(5);//x
 	REQUIRE(board.game_over() == false);
-	board.mark_board(5);//o
+	board.mark_board(9);//o
 	REQUIRE(board.game_over() == false);
-	board.mark_board(4);//x
+	board.mark_board(8);//x
 	REQUIRE(board.game_over() == true);
 
 }
@@ -236,9 +236,9 @@ TEST_CASE("Test no winnr")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(2);//O
 	REQUIRE(board.game_over() == false);
-	board.mark_board(6);//x
+	board.mark_board(3);//x
 	REQUIRE(board.game_over() == false);
-	board.mark_board(3);//o
+	board.mark_board(6);//o
 	REQUIRE(board.game_over() == false);
 	board.mark_board(4);//x
 	REQUIRE(board.game_over() == false);
