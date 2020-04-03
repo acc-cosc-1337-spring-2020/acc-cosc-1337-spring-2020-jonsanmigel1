@@ -9,6 +9,8 @@ bool TicTacToe::game_over()
 	
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
+		set_winner();
+		std::cout << "There has been a winner" << std::endl;
 		return true;
 	}
 	else if (check_board_full() == false)
@@ -19,13 +21,7 @@ bool TicTacToe::game_over()
 	{
 		return true;
 	}
-	/*
-	else if (check_board_full())
-	{
-		return true;
-	}
-	return false;
-	*/
+	
 	
 }
 
@@ -45,19 +41,7 @@ void TicTacToe::start_game(string first_player)
 
 int TicTacToe::mark_board(int position)
 {
-	//I wrote this code/Tested while commenting out some stuff bwloe
-	//Still ended up with the same failing test case
-	/*
-	if (position >= 1 && position <= 9 && player == "X")
-	{
-		pegs[position - 1] = player;
-		TicTacToe::set_next_player();
-	}
-	else if (position >= 1 && position <= 9 && next_player == "O")
-	{
-		pegs[position - 1] = next_player;
-	}
-	*/
+	
 	if(position <1 || position >9)
 	{
 
@@ -111,27 +95,7 @@ int TicTacToe::mark_board(int position)
 
 	}
 
-	/*
-	if (position >= 1 && position <= 9)
-	{
-		
-
-	}
 	
-	
-	else
-	{
-		throw Error("You can only choose from 1-9");
-
-	}
-	if (player == "")
-	{
-		throw Error("Must start game, Player Cannot be empty");
-	}
-	*/
-
-	//pegs[position - 1] = player;
-	//TicTacToe::set_next_player();
 	
 }
 
@@ -168,14 +132,18 @@ void TicTacToe::clear_board()
 	}
 }
 
+
 void TicTacToe::set_winner()
 {
 	if (player == "X")
 	{
+		winner = "X";
+	}
+	else if (player == "O")
+	{
 		winner = "O";
 	}
-	else
-		winner == "X";
+		
 
 }
 
@@ -219,7 +187,7 @@ bool TicTacToe::check_column_win()
 
 	else
 	{
-		//std::cout << "A column win was not found" << std::endl;
+		
 		return false;
 	}
 
@@ -253,7 +221,7 @@ bool TicTacToe::check_row_win()
 	}
 	else
 	{
-		//std::cout << "A row win was not found" << std::endl;
+		
 		return false;
 	}
 
@@ -279,7 +247,7 @@ bool TicTacToe::check_diagnol_win()
 	}
 	else
 	{
-		//std::cout << "No diagnol win found" << std::endl;
+		
 		return false;
 	}
 

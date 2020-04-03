@@ -255,5 +255,38 @@ TEST_CASE("Test no winnr")
 
 }
 
+TEST_CASE("Test winner by X")
+{
+	TicTacToe board;
+	board.start_game("X");
+	board.mark_board(7);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//x
+	REQUIRE(board.game_over() == false);
+	board.mark_board(8);//o
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//x
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
+}
 
+TEST_CASE("Test winner by O")
+{
+	TicTacToe board;
+	board.start_game("O");
+	board.mark_board(7);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//x
+	REQUIRE(board.game_over() == false);
+	board.mark_board(8);//o
+	REQUIRE(board.game_over() == false);
+	board.mark_board(3);//x
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "O");
+
+}
 
