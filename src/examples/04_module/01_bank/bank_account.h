@@ -12,7 +12,7 @@ public:
 	explicit BankAccount(int b) : balance{ b } { }// constructor is always the name of th class/it does not return a value
 	//if someone wants to use constructor they have to explicitly call it
 
-	int get_balance()const { return balance; }
+	virtual int get_balance()const { return balance; }
 	void deposit(int amount); //create deposit prototype 
 	void withdraw(int amount);
 	void open(int amount);
