@@ -10,7 +10,7 @@ bool TicTacToe::game_over()
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
 		set_winner();
-		std::cout << "There has been a winner" << std::endl;
+		std::cout << "There has been a winner: " << std::endl;
 		return true;
 	}
 	else if (check_board_full() == false)
@@ -19,6 +19,7 @@ bool TicTacToe::game_over()
 	}
 	else if (check_board_full() == true)
 	{
+		std::cout << "No winner" << "\n";
 		return true;
 	}
 	
@@ -45,7 +46,7 @@ int TicTacToe::mark_board(int position)
 	if(position <1 || position >9)
 	{
 
-		throw Error("You can only choose from 1-9");
+		throw Error("\n You can only choose from 1-9");
 
 	}
 	else if(player == "")
