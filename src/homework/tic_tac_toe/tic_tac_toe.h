@@ -10,14 +10,14 @@ public:
 	bool game_over();
 	void start_game(string first_player);
 	int mark_board(int position);
-	
+
 	void set_next_player();
-	
+	void display_board() const;
+
 	string get_player() const { return next_player; }
 	string get_winner() { return winner; }
-	
-	void display_board() const;
-	
+
+
 
 
 private:
@@ -39,7 +39,7 @@ private:
 class Error
 {
 public:
-	
+
 	Error(std::string msg) : message{ msg } {}
 	std::string get_message()const { return message; }
 

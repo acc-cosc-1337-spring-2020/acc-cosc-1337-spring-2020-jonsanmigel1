@@ -22,11 +22,11 @@ int main()
 			std::cout << "Please Enter X or O: ";
 			cin >> PlayerXorO;
 		
-			if (PlayerXorO == "X" || PlayerXorO == "O")
+			if (PlayerXorO == "X" ||PlayerXorO == "O")
 			{
 				break;
 			}
-		} while (PlayerXorO != "X" || PlayerXorO != "O"|| PlayerXorO ==" ");
+		} while (PlayerXorO != "X" || PlayerXorO != "O" ||PlayerXorO ==" ");
 
 
 
@@ -62,7 +62,7 @@ int main()
 					if (thegame.game_over() == true)
 					{
 						
-						PlayerXorO = "X";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
+						//PlayerXorO = "X";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
 						std::cout << thegame.get_winner();
 						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
 						cin >> another_game;
@@ -92,7 +92,7 @@ int main()
 					if (thegame.game_over() == true)
 					{
 						
-						PlayerXorO = "O";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
+						//PlayerXorO = "O";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
 						
 						std::cout << thegame.get_winner();
 						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
