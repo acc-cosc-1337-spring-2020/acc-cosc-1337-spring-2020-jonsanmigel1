@@ -1,7 +1,8 @@
 //h
 #include <string>
 #include <vector>
-
+#include <iostream>
+using std::cout;
 using std::string;
 
 class TicTacToe
@@ -17,7 +18,7 @@ public:
 	string get_player() const { return next_player; }
 	string get_winner() { return winner; }
 
-
+	
 
 
 private:
@@ -27,14 +28,28 @@ private:
 	bool check_diagnol_win();
 	bool check_board_full();
 	void clear_board();
-	void set_winner();//created 3//22
+	void set_winner();
 	string winner;
 	string player;
 	string next_player;
-	//void set_next_player();
 	std::vector<std::string>pegs{ 9, " " };
+	//void set_next_player();
 
 };
+class TicTacToeManager
+{
+public:
+	friend std::ostream& operator<<(std::ostream& os, const TicTacToeManager games);
+private:
+	std::vector<TicTacToe> games;
+	int x_win = { 0 };
+	int o_win = { 0 };
+	int ties = { 0 };
+};
+
+
+
+
 
 class Error
 {
