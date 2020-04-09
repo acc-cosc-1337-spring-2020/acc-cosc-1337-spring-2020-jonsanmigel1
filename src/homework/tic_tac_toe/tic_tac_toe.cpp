@@ -10,7 +10,7 @@ bool TicTacToe::game_over()
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
 		set_winner();
-		std::cout << "There has been a winner: " << std::endl;
+		//std::cout << "There has been a winner: " << std::endl;
 		return true;
 	}
 	else if (check_board_full() == false)
@@ -271,14 +271,4 @@ bool TicTacToe::check_diagnol_win()
 
 }
 
-std::ostream & operator<<(std::ostream & os, const TicTacToe games)
-{
-	
-	for (vector<TicTacToe>::iterator i = classVector.begin();
-		i != classVector.end();
-		++i)
-	{
-		cout << *i << endl;
-	}
-	// TODO: insert return statement here
-}
+

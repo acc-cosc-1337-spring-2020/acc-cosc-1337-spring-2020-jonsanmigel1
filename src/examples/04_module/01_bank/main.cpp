@@ -1,5 +1,6 @@
 #include "checking_account.h"
 #include "savings_account.h"
+#include "customer.h"
 #include <memory>
 #include <iostream>
 #include <vector>
@@ -29,11 +30,9 @@ int main()
 	}
 	//auto num{ 0 };//Initialize the variable give the variable a defualt initialization
 	
-	BankAccount account(500);//create object
-	std::cin >> account;
 	
-	std::cout << account;
-	display_balance(account);
+
+	
 
 	auto balance = account.get_balance();//this balance variable is not the same as our class they are 2 different variables in memory
 

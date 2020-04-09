@@ -5,7 +5,7 @@ using std::cin;
 int main()
 {
 	string firstplayer;
-	int value=0;
+	int value = 0;
 	int count = 0;
 	string PlayerXorO;
 	string choice;
@@ -14,19 +14,19 @@ int main()
 
 	do {
 
-	/*Validation Loop, Loop continues if player does
-		not enter an X or O */
-		
+		/*Validation Loop, Loop continues if player does
+			not enter an X or O */
+
 		do
 		{
 			std::cout << "Please Enter X or O: ";
 			cin >> PlayerXorO;
-		
-			if (PlayerXorO == "X" ||PlayerXorO == "O")
+
+			if (PlayerXorO == "X" || PlayerXorO == "O")
 			{
 				break;
 			}
-		} while (PlayerXorO != "X" || PlayerXorO != "O" ||PlayerXorO ==" ");
+		} while (PlayerXorO != "X" || PlayerXorO != "O" || PlayerXorO == " ");
 
 
 
@@ -61,10 +61,11 @@ int main()
 					PlayerXorO = "O";
 					if (thegame.game_over() == true)
 					{
-						
+
 						//PlayerXorO = "X";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
 						std::cout << thegame.get_winner();
-						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
+						std::cout << "\n GAMEOVER"<<std::endl;
+						std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
 						cin >> another_game;
 						break;
 					}
@@ -91,9 +92,9 @@ int main()
 					PlayerXorO = "X";
 					if (thegame.game_over() == true)
 					{
-						
+
 						//PlayerXorO = "O";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
-						
+
 						std::cout << thegame.get_winner();
 						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
 						cin >> another_game;
@@ -102,17 +103,7 @@ int main()
 
 				}
 			}
-			/*
-			try
-			{
-				thegame.mark_board(value);
-			}
-
-			catch (Error the_error)
-			{
-				cout << the_error.get_message();
-			}
-			*/
+			
 
 
 
@@ -120,12 +111,22 @@ int main()
 			cin >> choice;
 
 
-		} while (choice == "Y"||choice=="y");
+		} while (choice == "Y" || choice == "y");
 
-		if (choice == "N"||choice=="n")
+		if (choice == "N" || choice == "n")
 		{
 			exit(8);
 		}
 	} while (another_game == "Y" || another_game == "y");
 	return 0;
 }
+/*
+			try
+			{
+				thegame.mark_board(value);
+			}
+			catch (Error the_error)
+			{
+				cout << the_error.get_message();
+			}
+			*/
