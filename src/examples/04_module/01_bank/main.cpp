@@ -1,6 +1,7 @@
 #include "checking_account.h"
 #include "savings_account.h"
 #include "customer.h"
+#include "atm.h"
 #include<iostream>
 #include<vector>
 #include<string>
@@ -11,18 +12,21 @@ using std::unique_ptr; using std::make_unique;
 
 int main()
 {
+	
 	//c++ 11
-	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(90);
-	unique_ptr<BankAccount> c = make_unique<CheckingAccount>(100);
+	//Create space fro bankaccount type
+	unique_ptr<BankAccount> s = make_unique<SavingsAccount>(90);//Heap Variable or pointer behind the scenes
+	unique_ptr<BankAccount> c = make_unique<CheckingAccount>(100);//Create instance of bankaccount type
 
-	std::vector<unique_ptr<BankAccount>> accounts;
-	accounts.push_back(std::move(s));
-	accounts.push_back(std::move(c));
+	
 
-	for (auto &act : accounts)
-	{
-		cout << act->get_balance() << "\n";
-	}
+	Customer cust;
+	cust.add_account(s);
+	cust.add_account(c);
+
+	ATM atm(cust);
+	cout << atm;
+	
 
 	/*
 	cin >> account;
