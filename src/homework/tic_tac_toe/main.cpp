@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -33,6 +34,7 @@ int main()
 		/*Start the game and send PlayerXorO as argument once
 		  user enters valid Data*/
 		TicTacToe thegame;
+		TicTacToeManager manager;
 		thegame.start_game(PlayerXorO);
 
 
@@ -64,6 +66,9 @@ int main()
 
 						//PlayerXorO = "X";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
 						std::cout << thegame.get_winner();
+						manager.save_game(thegame);
+						std::cout << "\n";
+						cout << manager;//displays the board from previous game
 						std::cout << "\n GAMEOVER"<<std::endl;
 						std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
 						cin >> another_game;
@@ -92,10 +97,12 @@ int main()
 					PlayerXorO = "X";
 					if (thegame.game_over() == true)
 					{
+						std::cout << "\n"<<thegame.get_winner();
+						manager.save_game(thegame);
+						std::cout << "\n";
+						cout << manager;//displays the board from previous game
 
-						//PlayerXorO = "O";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
-
-						std::cout << thegame.get_winner();
+						
 						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
 						cin >> another_game;
 						break;

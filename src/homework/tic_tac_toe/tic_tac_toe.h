@@ -1,4 +1,5 @@
 //h
+#pragma once
 #include <string>
 #include <vector>
 #include <iostream>
@@ -14,6 +15,8 @@ public:
 
 	void set_next_player();
 	void display_board() const;
+	
+	friend std::ostream &operator<<(std::ostream &out, const TicTacToe &b);
 
 	string get_player() const { return next_player; }
 	string get_winner() { return winner; }
@@ -36,18 +39,6 @@ private:
 	//void set_next_player();
 
 };
-class TicTacToeManager
-{
-public:
-	friend std::ostream& operator<<(std::ostream& os, const TicTacToeManager games);
-private:
-	std::vector<TicTacToe> games;
-	int x_win = { 0 };
-	int o_win = { 0 };
-	int ties = { 0 };
-};
-
-
 
 
 

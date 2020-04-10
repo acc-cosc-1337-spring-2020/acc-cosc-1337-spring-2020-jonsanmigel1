@@ -1,3 +1,8 @@
+
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
+
+
 #include "tic_tac_toe.h"
 #include <iostream>
 using std::cout;
@@ -271,4 +276,16 @@ bool TicTacToe::check_diagnol_win()
 
 }
 
+#endif
 
+std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
+{
+	
+	for (int i = 0; i < 9; i += 3)
+	{
+		
+		out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "\n";
+	}
+	return out;
+	// TODO: insert return statement here
+}
