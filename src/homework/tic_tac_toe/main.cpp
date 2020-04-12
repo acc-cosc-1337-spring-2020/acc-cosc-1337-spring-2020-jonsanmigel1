@@ -6,134 +6,62 @@ using std::cin;
 int main()
 {
 	string firstplayer;
-	int value = 0;
-	int count = 0;
 	string PlayerXorO;
 	string choice;
-	string the_current_player;
 	string another_game;
+	int value = 0;
 
-	do {
+	TicTacToe thegame;
+	TicTacToeManager manager;
 
+
+	do
+	{
 		/*Validation Loop, Loop continues if player does
 			not enter an X or O */
+		std::cout << "Please enter X or O" << std::endl;
+		cin >> PlayerXorO;
 
-		do
+		try
 		{
-			std::cout << "Please Enter X or O: ";
-			cin >> PlayerXorO;
-
-			if (PlayerXorO == "X" || PlayerXorO == "O")
-			{
-				break;
-			}
-		} while (PlayerXorO != "X" || PlayerXorO != "O" || PlayerXorO == " ");
-
-
-
-		/*Start the game and send PlayerXorO as argument once
-		  user enters valid Data*/
-		TicTacToe thegame;
-		TicTacToeManager manager;
-		thegame.start_game(PlayerXorO);
-
-
-		do
-		{
-
-
-
-			if (PlayerXorO == "X")
-			{
-				do
-				{
-					std::cout << "PLayer: " << PlayerXorO << " Please enter 1-9 " << std::endl;
-					cin >> value;
-
-
-
-				} while (value < 1 || value>9);
-
-				if (value >= 1 || value <= 9)
-				{
-					thegame.mark_board(value);
-
-					thegame.display_board();
-
-					PlayerXorO = "O";
-					if (thegame.game_over() == true)
-					{
-
-						//PlayerXorO = "X";//iF THE GAME IS OVER SET WINNER TO THE PLAYER WHO IS IN TURN
-						std::cout << thegame.get_winner();
-						manager.save_game(thegame);
-						std::cout << "\n";
-						cout << manager;//displays the board from previous game
-						std::cout << "\n GAMEOVER"<<std::endl;
-						std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
-						cin >> another_game;
-						break;
-					}
-
-				}
-
-			}
-			else if (PlayerXorO == "O")
-			{
-				do
-				{
-					std::cout << "PLayer " << PlayerXorO << "Please enter 1-9" << std::endl;
-					cin >> value;
-
-
-				} while (value < 1 || value>9);
-				if (value >= 1 || value <= 9)
-				{
-					thegame.mark_board(value);
-
-					thegame.display_board();
-
-
-					PlayerXorO = "X";
-					if (thegame.game_over() == true)
-					{
-						std::cout << "\n"<<thegame.get_winner();
-						manager.save_game(thegame);
-						std::cout << "\n";
-						cout << manager;//displays the board from previous game
-
-						
-						std::cout << "Would you like to play another game?Press y to continue: " << std::endl;
-						cin >> another_game;
-						break;
-					}
-
-				}
-			}
-			
-
-
-
-			cout << "WOuld you like to continue? Type Y to continue or N to exit" << "\n";
-			cin >> choice;
-
-
-		} while (choice == "Y" || choice == "y");
-
-		if (choice == "N" || choice == "n")
-		{
-			exit(8);
+			thegame.start_game(PlayerXorO);
 		}
-	} while (another_game == "Y" || another_game == "y");
-	return 0;
-}
-/*
+		catch (Error e)
+		{
+			cout << e.get_message();
+		}
+		do
+		{
+
+
 			try
 			{
-				thegame.mark_board(value);
+				cin >> thegame;
+				cout << thegame;
 			}
-			catch (Error the_error)
+			catch (Error e)
 			{
-				cout << the_error.get_message();
+				cout << e.get_message();
 			}
-			*/
+
+		} while (thegame.game_over() == false);
+		if (thegame.game_over() == true)
+		{
+			std::cout << "The Winner is: "<<thegame.get_winner();
+			manager.save_game(thegame);
+			std::cout << "\n";
+			cout << manager;//displays the board from previous game
+			std::cout << "\n GAMEOVER" << std::endl;
+			std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
+			cin >> another_game;
+		}
+	} while (another_game == "y" || another_game == "Y");
+	
+		
+
+
+	
+
+	
+	return 0;
+}

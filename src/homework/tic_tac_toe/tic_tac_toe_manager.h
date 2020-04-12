@@ -14,12 +14,13 @@ class TicTacToeManager
 {
 public:
 	void save_game(const TicTacToe b);
-	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);
+	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);//May need to add const back
 	void get_winner_total(int& o, int &w, int &t);
 
 private:
 	std::vector<TicTacToe> games;
-	int x_win = { 0 };
+	void update_winner_count(std::string winner);
+	int x_win{ 0 };
 	int o_win = { 0 };
 	int ties = { 0 };
 

@@ -36,7 +36,7 @@ void TicTacToe::start_game(string first_player)
 	if (first_player == "X" || first_player == "O")
 	{
 		player = first_player;
-		next_player = first_player;
+		
 		
 	}
 	else
@@ -45,7 +45,7 @@ void TicTacToe::start_game(string first_player)
 	}
 	clear_board();
 }
-
+/*
 int TicTacToe::mark_board(int position)
 {
 	
@@ -106,7 +106,7 @@ int TicTacToe::mark_board(int position)
 	
 }
 
-/*
+*/
 void TicTacToe::mark_board(int position)
 {
 	if (position < 1 || position > 9)
@@ -120,10 +120,13 @@ void TicTacToe::mark_board(int position)
 	else
 	{
 		pegs[position - 1] = player; //minus one for the index
-		set_next_player();
+		if (game_over() == false)
+		{
+			set_next_player();
+		}
 	}
 }
-*/
+
 void TicTacToe::display_board() const
 {
 	for (int i = 0; i < 9; i += 3)
@@ -174,11 +177,11 @@ void TicTacToe::set_next_player()
 {
 	if (player == "X")
 	{
-		next_player = "O";
+		player = "O";
 	}
 	else
 	{
-		next_player = "X";
+		player = "X";
 	}
 }
 bool TicTacToe::check_column_win()
@@ -287,5 +290,16 @@ std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 		out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "\n";
 	}
 	return out;
+	// TODO: insert return statement here
+}
+
+std::istream & operator>>(std::istream & in, TicTacToe & c)
+{
+	int pos = 0;
+	std::cout << "Player " << c.get_player() << " enter a position: ";
+	in >> pos;
+	c.mark_board(pos);
+
+	return in;
 	// TODO: insert return statement here
 }
