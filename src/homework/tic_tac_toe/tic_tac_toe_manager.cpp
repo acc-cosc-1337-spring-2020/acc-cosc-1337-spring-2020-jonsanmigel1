@@ -6,6 +6,8 @@
 
 std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 {
+	/*This will loop through the vector of games for each game pushed back to vector
+	it will determine the winner and increment each variable accordingly*/
 	int x_win{ 0 }, o_win{ 0 }, ties{ 0 };
 	for (auto game : manager.games)
 	{
@@ -24,7 +26,7 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 		{
 			ties = ties + 1;
 		}
-		out << "\n X wins" << x_win << "\n O wins" << o_win << "\n" << ties;
+		out << "\n X wins" << x_win << "\n O wins" << o_win << "\n" <<"No winner: "<< ties<<"\n";
 		return out;
 	}
 	
