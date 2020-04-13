@@ -57,10 +57,11 @@ int main()
 			//cout << manager;//displays the board from previous game
 			std::cout << "\n GAMEOVER" << std::endl;
 			std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
+			std::cout << "\n Press N to exit and display game stats" << std::endl;
 			cin >> another_game;
 		}
 	} while (another_game == "y" || another_game == "Y");
-	if (another_game == "N")
+	if (another_game == "N"||another_game == "n")
 	{
 		cout << manager;
 	}
