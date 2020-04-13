@@ -1,6 +1,4 @@
 
-#ifndef TIC_TAC_TOE_H
-#define TIC_TAC_TOE_H
 
 
 #include "tic_tac_toe.h"
@@ -36,6 +34,7 @@ void TicTacToe::start_game(string first_player)
 	if (first_player == "X" || first_player == "O")
 	{
 		player = first_player;
+		clear_board();
 		
 		
 	}
@@ -279,7 +278,7 @@ bool TicTacToe::check_diagnol_win()
 
 }
 
-#endif
+
 
 std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {

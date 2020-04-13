@@ -15,7 +15,7 @@ class TicTacToeManager
 public:
 	void save_game(const TicTacToe b);
 	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);//May need to add const back
-	void get_winner_total(int& o, int &w, int &t);
+	void get_winner_total(int& x, int &o, int &t);
 
 private:
 	std::vector<TicTacToe> games;

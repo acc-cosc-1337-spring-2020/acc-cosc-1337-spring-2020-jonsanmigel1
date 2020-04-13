@@ -13,23 +13,25 @@ int main()
 
 	TicTacToe thegame;
 	TicTacToeManager manager;
-
+	bool error;
 
 	do
 	{
-		
+		//TicTacToe thegame;
+		//TicTacToeManager manager;
 		/*Validation Loop, Loop continues if player does
 			not enter an X or O */
 		std::cout << "Please enter X or O" << std::endl;
 		cin >> PlayerXorO;
-
+		
 		try
 		{
 			thegame.start_game(PlayerXorO);
-		}
+		}	
 		catch (Error e)
 		{
 			cout << e.get_message();
+			error = true;
 		}
 		do
 		{
@@ -48,8 +50,9 @@ int main()
 		} while (thegame.game_over() == false);
 		if (thegame.game_over() == true)
 		{
-			std::cout << "The Winner is: "<<thegame.get_winner();
+			std::cout << "The Winner is:"<< thegame.get_winner();
 			manager.save_game(thegame);
+			cout << "\n"<<manager;
 			std::cout << "\n";
 			//cout << manager;//displays the board from previous game
 			std::cout << "\n GAMEOVER" << std::endl;
@@ -57,7 +60,9 @@ int main()
 			cin >> another_game;
 		}
 	} while (another_game == "y" || another_game == "Y");
-	cout << manager;
-	
+	if (another_game == "N")
+	{
+		cout << manager;
+	}
 	return 0;
 }
