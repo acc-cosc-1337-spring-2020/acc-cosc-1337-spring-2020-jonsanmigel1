@@ -1,9 +1,12 @@
 //temperature_data.cpp
 #include "temperature_data.h"
 
-void ave_temp(std::vector<Temperature>& ts)
+
+
+
+void TemperatureData::save_temps(std::vector<Temperature>& ts)
 {
-	std::ofstream file_out(file_name, std::ios_base::trunc;
+	std::ofstream file_out(file_name, std::ios_base::trunc);
 	for (auto temp : ts)
 	{
 		file_out << temp.get_hour();
@@ -23,10 +26,10 @@ std::vector<Temperature>TemperatureData::get_temps()const
 
 	if (read_file.is_open())
 	{
-		while (read_file >> hour >> temp >> reading)
+		while (read_file >> hour >> reading)
 		{
 			Temperature temp(hour, reading);
-			temps.push_back(temp)
+			temps.push_back(temp);
 		}
 	}
 	read_file.close();
