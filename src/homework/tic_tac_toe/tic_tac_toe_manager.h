@@ -7,19 +7,20 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <functional>
 using std::cout;
 
 
 class TicTacToeManager
 {
 public:
-	void save_game(const TicTacToe b);
+	void save_game(TicTacToe b);
 	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);//May need to add const back
 	void get_winner_total(int& x, int &o, int &t);
 
 private:
-	//std::vector<std::reference_wrapper<TicTacToe>> games;
-	std::vector<TicTacToe> games;
+	std::vector<std::reference_wrapper<TicTacToe>> games;
+	//std::vector<TicTacToe> games;
 	void update_winner_count(std::string winner);
 	int x_win{ 0 };
 	int o_win = { 0 };

@@ -1,6 +1,7 @@
 
 #include "tic_tac_toe_manager.h"
 //#include "tic_tac_toe.h"
+#include <functional>
 
 //cpp
 
@@ -42,8 +43,8 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	return out;
 	// TODO: insert return statement here
 }
-
-void TicTacToeManager::save_game(const TicTacToe b)
+//Note i removed const from save game
+void TicTacToeManager::save_game( TicTacToe b)
 {
 	games.push_back(b);
 	update_winner_count(b.get_winner());

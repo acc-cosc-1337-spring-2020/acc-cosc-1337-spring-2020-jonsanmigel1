@@ -261,7 +261,7 @@ TEST_CASE("Test winner by O")
 }
 
 */
-TEST_CASE("Test winner by O")
+TEST_CASE("Test winner by O TicTacToe4")
 {
 	TicTacToe4 board;
 
@@ -279,6 +279,30 @@ TEST_CASE("Test winner by O")
 	board.mark_board(9);//x
 	REQUIRE(board.game_over() == false);
 	board.mark_board(4);//O
+
+	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "O");
+
+}
+TEST_CASE("Test winner by O TicTacToe4 Column")
+{
+	
+	TicTacToe4 board;
+
+	board.start_game("O");
+	board.mark_board(1);//o
+	REQUIRE(board.game_over() == false);
+	board.mark_board(6);//x
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(10);//X
+	REQUIRE(board.game_over() == false);
+	board.mark_board(9);//O
+	REQUIRE(board.game_over() == false);
+	board.mark_board(12);//x
+	REQUIRE(board.game_over() == false);
+	board.mark_board(13);//O
 
 	REQUIRE(board.game_over() == true);
 	REQUIRE(board.get_winner() == "O");

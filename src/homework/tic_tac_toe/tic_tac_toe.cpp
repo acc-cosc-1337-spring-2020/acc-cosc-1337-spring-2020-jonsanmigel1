@@ -108,7 +108,8 @@ int TicTacToe::mark_board(int position)
 */
 void TicTacToe::mark_board(int position)
 {
-	if (position < 1 || position > 9)
+	
+	if (position < 1 || position > pegs.size())
 	{
 		throw Error("Position must be 1 to 9.\n");
 	}
@@ -284,10 +285,19 @@ bool TicTacToe::check_diagnol_win()
 std::ostream & operator<<(std::ostream & out, const TicTacToe & b)
 {
 	
-	for (int i = 0; i < 9; i += 3)
+	if (b.pegs.size() == 9)
 	{
-		
-		out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "\n";
+		for (int i = 0; i < 9; i += 3)
+		{
+			out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "\n";
+		}
+	}
+	else if (b.pegs.size() == 16)
+	{
+		for (int i = 0; i < 16; i += 4)
+		{
+			out << b.pegs[i] << "|" << b.pegs[i + 1] << "|" << b.pegs[i + 2] << "|" << b.pegs[i + 3] << "\n";
+		}
 	}
 	return out;
 	// TODO: insert return statement here
