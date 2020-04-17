@@ -18,6 +18,7 @@ public:
 	void get_winner_total(int& x, int &o, int &t);
 
 private:
+	//std::vector<std::reference_wrapper<TicTacToe>> games;
 	std::vector<TicTacToe> games;
 	void update_winner_count(std::string winner);
 	int x_win{ 0 };

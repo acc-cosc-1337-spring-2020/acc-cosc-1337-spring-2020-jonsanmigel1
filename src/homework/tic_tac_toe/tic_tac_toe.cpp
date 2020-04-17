@@ -185,6 +185,7 @@ void TicTacToe::set_next_player()
 }
 bool TicTacToe::check_column_win()
 {
+	/*
 	if (pegs[0] == "X" && pegs[3] == "X" && pegs[6] == "X")
 	{
 		return true;
@@ -209,17 +210,16 @@ bool TicTacToe::check_column_win()
 	{
 		return true;
 	}
+	*/
 
-	else
-	{
 		
-		return false;
-	}
+	return false;
 
 }
 
 bool TicTacToe::check_row_win()
 {
+	/*
 	if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X")
 	{
 		return true;
@@ -244,16 +244,17 @@ bool TicTacToe::check_row_win()
 	{
 		return true;
 	}
-	else
-	{
+	*/
+	
 		
-		return false;
-	}
+	return false;
+	
 
 }
 
 bool TicTacToe::check_diagnol_win()
 {
+	/*
 	if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X")
 	{
 		return true;
@@ -270,11 +271,11 @@ bool TicTacToe::check_diagnol_win()
 	{
 		return true;
 	}
-	else
-	{
+	*/
+	
 		
-		return false;
-	}
+	return false;
+	
 
 }
 
