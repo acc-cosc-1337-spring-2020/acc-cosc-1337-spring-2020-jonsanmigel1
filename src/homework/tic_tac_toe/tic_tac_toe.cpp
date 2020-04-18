@@ -13,7 +13,7 @@ bool TicTacToe::game_over()
 	if (check_diagnol_win() == true || check_column_win() == true || check_row_win() == true)
 	{
 		set_winner();
-		//std::cout << "There has been a winner: " << std::endl;
+		
 		return true;
 	}
 	else if (check_board_full() == false)
@@ -44,68 +44,7 @@ void TicTacToe::start_game(string first_player)
 	}
 	clear_board();
 }
-/*
-int TicTacToe::mark_board(int position)
-{
-	
-	if(position <1 || position >9)
-	{
 
-		throw Error("\n You can only choose from 1-9");
-
-	}
-	else if(player == "")
-	{
-		throw Error("Must start game, Player Cannot be empty");
-	}
-	else if (position >= 1 && position <= 9)
-	{
-		switch (count)
-		{
-		case(0):
-			pegs[position - 1] = player;
-			TicTacToe::set_next_player();
-
-			return count = count + 1;
-		case(1):
-			pegs[position - 1] = next_player;
-			return count = count + 1;
-		case(2):
-			pegs[position - 1] = player;
-			return count = count + 1;
-		case(3):
-			pegs[position - 1] = next_player;
-			return count = count + 1;
-		case(4):
-			pegs[position - 1] = player;
-			return count = count + 1;
-		case(5):
-			pegs[position - 1] = next_player;
-			return count = count + 1;
-		case(6):
-			pegs[position - 1] = player;
-			return count = count + 1;
-		case(7):
-			pegs[position - 1] = next_player;
-			return count = count + 1;
-		case(8):
-			pegs[position - 1] = player;
-			return count = count + 1;
-		case(9):
-			pegs[position - 1] = next_player;
-			return count = count + 1;
-
-
-
-		}
-
-	}
-
-	
-	
-}
-
-*/
 void TicTacToe::mark_board(int position)
 {
 	

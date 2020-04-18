@@ -17,7 +17,7 @@ public:
 	void start_game(string first_player);
 	void mark_board(int position);
 
-	//void set_next_player();
+	
 	void display_board() const;
 	
 	friend std::ostream &operator<<(std::ostream &out, const TicTacToe &b);
@@ -37,9 +37,7 @@ protected:
 
 private:
 	int count{ 0 };
-	//bool check_column_win();
-	//bool check_row_win();
-	//bool check_diagnol_win();
+	
 	bool check_board_full();
 	void clear_board();
 	void set_winner();
@@ -47,8 +45,7 @@ private:
 	string winner;
 	string player;
 	string next_player;
-	//std::vector<std::string>pegs{ 9, " " };
-	//void set_next_player();
+	
 
 };
 
