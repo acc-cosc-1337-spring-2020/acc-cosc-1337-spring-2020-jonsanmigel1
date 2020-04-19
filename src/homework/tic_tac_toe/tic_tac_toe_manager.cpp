@@ -14,7 +14,7 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	for (auto& game : manager.games)
 	{
 		
-		//out<<game;
+		out<<game;
 		out<< "x_wins: " << manager.x_win << "\no wins: " << manager.o_win << "\nties: " << manager.ties;
 
 		

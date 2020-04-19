@@ -7,7 +7,7 @@ using std::cout;
 using std::cin;
 int main()
 {
-	
+
 	string PlayerXorO;
 	string choice;
 	string another_game;
@@ -22,7 +22,7 @@ int main()
 	{
 		//TicTacToe thegame;
 		//TicTacToeManager manager;
-		
+
 		std::cout << "Please enter 3 or 4" << "\n";
 		cin >> game_choice;
 
@@ -115,13 +115,13 @@ int main()
 				cin >> another_game;
 			}
 		}
-		
+
 	} while (another_game == "y" || another_game == "Y");
-	
-	if (another_game == "N"||another_game == "n")
+
+	if (another_game == "N" || another_game == "n")
 	{
 		cout << manager;
-		
+
 	}
 	return 0;
 }

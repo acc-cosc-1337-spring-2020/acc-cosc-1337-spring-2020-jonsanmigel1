@@ -59,13 +59,13 @@ TEST_CASE("Start game with O gameflow")
 }
 
 
-
+*/
 
 
 
 TEST_CASE("Test win by first Column")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(1);
 	REQUIRE(board.game_over() == false);
@@ -85,7 +85,7 @@ TEST_CASE("Test win by first Column")
 
 TEST_CASE("Test win by second Column")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(2);
 	REQUIRE(board.game_over() == false);
@@ -101,7 +101,7 @@ TEST_CASE("Test win by second Column")
 }
 TEST_CASE("Test win by third Column")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(3);
 	REQUIRE(board.game_over() == false);
@@ -117,7 +117,7 @@ TEST_CASE("Test win by third Column")
 }
 TEST_CASE("Test win by first row")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(1);
 	REQUIRE(board.game_over() == false);
@@ -133,7 +133,7 @@ TEST_CASE("Test win by first row")
 }
 TEST_CASE("Test win by second row")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(4);
 	REQUIRE(board.game_over() == false);
@@ -149,7 +149,7 @@ TEST_CASE("Test win by second row")
 }
 TEST_CASE("Test win by third row")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(7);
 	REQUIRE(board.game_over() == false);
@@ -165,7 +165,7 @@ TEST_CASE("Test win by third row")
 }
 TEST_CASE("Test win by diagnol row")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(1);
 	REQUIRE(board.game_over() == false);
@@ -181,7 +181,7 @@ TEST_CASE("Test win by diagnol row")
 }
 TEST_CASE("Test win diagnolly from bottom left")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(7);
 	REQUIRE(board.game_over() == false);
@@ -200,7 +200,7 @@ TEST_CASE("Test win diagnolly from bottom left")
 
 TEST_CASE("Test no winnr")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(1);
 	REQUIRE(board.game_over() == false);
@@ -227,7 +227,7 @@ TEST_CASE("Test no winnr")
 
 TEST_CASE("Test winner by X")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("X");
 	board.mark_board(7);
 	REQUIRE(board.game_over() == false);
@@ -244,7 +244,7 @@ TEST_CASE("Test winner by X")
 
 TEST_CASE("Test winner by O")
 {
-	TicTacToe board;
+	TicTacToe3 board;
 	board.start_game("O");
 	board.mark_board(7);
 	REQUIRE(board.game_over() == false);
@@ -260,7 +260,7 @@ TEST_CASE("Test winner by O")
 
 }
 
-*/
+
 TEST_CASE("Test winner by O TicTacToe4")
 {
 	TicTacToe4 board;
