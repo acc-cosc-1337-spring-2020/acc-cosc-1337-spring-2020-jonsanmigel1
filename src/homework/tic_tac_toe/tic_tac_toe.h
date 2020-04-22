@@ -12,13 +12,12 @@ using std::string;
 class TicTacToe
 {
 public:
-	
+
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int position);
 
 	
-	void display_board() const;
 	
 	friend std::ostream &operator<<(std::ostream &out, const TicTacToe &b);
 	friend std::istream &operator>>(std::istream &in, TicTacToe &c );

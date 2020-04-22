@@ -14,31 +14,15 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	for (auto& game : manager.games)
 	{
 		
-		out<<game;
-		out<< "x_wins: " << manager.x_win << "\no wins: " << manager.o_win << "\nties: " << manager.ties;
+		out<<game<<"\n";
 
 		
 		
-		/*
-		if (game.get_winner() == "X")
-		{
-			
-			x_win =x_win + 1;
-		}
-		else if (game.get_winner() == "O")
-		{
-			o_win = o_win + 1;
-		}
-		else
-		{
-			ties = ties + 1;
-		}
-		
-		out << "\n X wins" << manager.x_win << "\n O wins" << o_win << "\n" <<"No winner: "<< ties<<"\n";
-		*/
 		return out;
 	}
-	
+	out << "\nO win: " << manager.o_win<<"\n";
+	out<<"X win: " << manager.x_win<<"\n";
+	out << "Ties: " << manager.ties<<"\n";
 
 	return out;
 	// TODO: insert return statement here
