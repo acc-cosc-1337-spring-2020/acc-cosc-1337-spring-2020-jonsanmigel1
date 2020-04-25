@@ -29,9 +29,9 @@ public:
 
 protected:
 	std::vector<std::string>pegs{ 9, " " };
-	virtual bool check_column_win();
-	virtual bool check_row_win();
-	virtual bool check_diagnol_win();
+	virtual bool check_column_win()=0;
+	virtual bool check_row_win()=0;
+	virtual bool check_diagnol_win()=0;
 
 
 private:
