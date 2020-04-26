@@ -14,7 +14,7 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	for (auto& game : manager.games)
 	{
 		
-		out<<game<<"\n";
+		out<<*game<<"\n";
 
 		
 		
@@ -30,8 +30,8 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 //Note i removed const from save game //added &in front of b
 void TicTacToeManager::save_game( std::unique_ptr<TicTacToe> &b)
 {
-	games.push_back(std::move(b));
 	update_winner_count(b->get_winner());
+	games.push_back(std::move(b));
 }
 
 void TicTacToeManager::get_winner_total(int & x, int & o, int & t)

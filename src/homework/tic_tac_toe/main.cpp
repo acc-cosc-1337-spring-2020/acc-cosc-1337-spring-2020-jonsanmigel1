@@ -24,7 +24,6 @@ int main()
 	{
 		unique_ptr<TicTacToe>thegame;
 		
-		std::vector < std::unique_ptr<TicTacToe>>games;
 		
 		std::cout << "Please enter 3 or 4" << "\n";
 		cin >> game_choice;
@@ -32,101 +31,56 @@ int main()
 		if (game_choice == 3)
 		{
 			thegame = std::make_unique<TicTacToe3>();
-			games.push_back(thegame);;
-			
-
-			std::cout << "Please enter X or O" << std::endl;
-			cin >> PlayerXorO;
-
-			try
-			{
-				thegame->start_game(PlayerXorO);
-			}
-			catch (Error e)
-			{
-				cout << e.get_message();
-				error = true;
-			}
-
-			do
-			{
-				try
-				{
-					cin >> *thegame;
-					cout << *thegame;
-				}
-				catch (Error e)
-				{
-					cout << e.get_message();
-				}
-
-			} while (thegame->game_over() == false);
-			if (thegame->game_over() == true)
-			{
-				std::cout << "The Winner is:" << thegame->get_winner();
-				manager->save_game(thegame);
-				cout << "\n" << *manager;
-				std::cout << "\n";
-				//cout << manager;//displays the board from previous game
-				std::cout << "\n GAMEOVER" << std::endl;
-				std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
-				std::cout << "\n Press N to exit and display game stats" << std::endl;
-				cin >> another_game;
-			}
 		}
-		
-		if (game_choice == 4)
+		else if (game_choice == 4) 
 		{
 			thegame = std::make_unique<TicTacToe4>();
-			//games.push_back(thegame);
+		}
+			
 
-			std::cout << "Please enter X or O" << std::endl;
-			cin >> PlayerXorO;
+		std::cout << "Please enter X or O" << std::endl;
+		cin >> PlayerXorO;
 
+		try
+		{
+			thegame->start_game(PlayerXorO);
+		}
+		catch (Error e)
+		{
+			cout << e.get_message();
+			error = true;
+		}
+
+		do
+		{
 			try
 			{
-				thegame->start_game(PlayerXorO);
+				cin >> *thegame;
+				cout << *thegame;
 			}
 			catch (Error e)
 			{
 				cout << e.get_message();
-				error = true;
 			}
 
-			do
-			{
-				try
-				{
-					cin >> *thegame;
-					cout << *thegame;
-				}
-				catch (Error e)
-				{
-					cout << e.get_message();
-				}
-
-			} while (thegame->game_over() == false);
-			if (thegame->game_over() == true)
-			{
-				std::cout << "The Winner is:" << thegame->get_winner();
-				manager->save_game(thegame);
-				cout << "\n" << *manager;
-				std::cout << "\n";
-				cout << *thegame;
-				//cout << manager;//displays the board from previous game
-				std::cout << "\n GAMEOVER" << std::endl;
-				std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
-				std::cout << "\n Press N to exit and display game stats" << std::endl;
-				cin >> another_game;
-			}
+		} while (thegame->game_over() == false);
+		if (thegame->game_over() == true)
+		{
+			std::cout << "The Winner is:" << thegame->get_winner();
+			manager->save_game(thegame);
+			
+			std::cout << "\n";
+			
+			std::cout << "\n GAMEOVER" << std::endl;
+			std::cout << "\n Would you like to play another game?Press y to continue: " << std::endl;
+			std::cout << "\n Press N to exit and display game stats" << std::endl;
+			cin >> another_game;
 		}
+		
 
 	} while (another_game == "y" || another_game == "Y");
 
-	if (another_game == "N" || another_game == "n")
-	{
-		cout << *manager;
+	cout << *manager;
 
-	}
 	return 0;
 }
