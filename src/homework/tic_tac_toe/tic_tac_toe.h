@@ -12,10 +12,13 @@ using std::string;
 class TicTacToe
 {
 public:
+	TicTacToe(int s) :pegs(s*s, " ") {}
+	TicTacToe(std::vector<string> p, std::string w) :pegs(p),winner(w) {}
 
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int position);
+	const std::vector<string> get_pegs() { return pegs; }
 
 	
 	
@@ -25,7 +28,7 @@ public:
 	string get_player() const { return player; }
 	string get_winner() const { return winner; }
 
-	TicTacToe(int s) :pegs(s*s, " ") {}
+	
 
 protected:
 	std::vector<std::string>pegs{ 9, " " };
