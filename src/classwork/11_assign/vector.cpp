@@ -1,6 +1,8 @@
 #include "vector.h"
 #include "vector.h"
 #include "vector.h"
+#include "vector.h"
+#include "vector.h"
 #include <iostream>
 using std::cout;
 /*
@@ -52,6 +54,41 @@ Vector & Vector::operator=(const Vector & v)
 	return *this;
 	// TODO: insert return statement here
 }
+/*
+Get the dynamic memory from v
+get the size from v 
+Point the v.nums to nullptr
+*/
+Vector::Vector(Vector && v)
+
+	: size{ v.size }, nums{ v.nums }
+	{
+		v.size = 0;
+		v.nums = nullptr;
+	}
+
+/*
+Deallocate original ynamic memory 
+get the dynamic memory from v 
+get the size from v
+Point v.nums to null ptr
+set v.size to 0
+
+*/
+Vector & Vector::operator=(Vector && v)
+{
+	delete nums;
+	nums = v.nums;
+	size = v.size;
+	v.nums = nullptr;
+	v.size = 0;
+
+	return *this;
+	// TODO: insert return statement here
+}
+
+
+
 
 //release dynamic memory
 //dealocate memory
@@ -68,4 +105,10 @@ void use_vector()
 	delete v1;
 	v1 = nullptr;//point to nothing
 
+}
+
+Vector get_vector()
+{
+	Vector v(3);
+	return v;
 }
