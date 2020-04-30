@@ -4,6 +4,7 @@
 
 
 #include "tic_tac_toe.h"
+#include <memory>
 class TicTacToe3 : public TicTacToe
 {
 public:

@@ -1,5 +1,6 @@
 #include "tic_tac_toe_data.h"
 #include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 //cpp
 
 void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs)
@@ -40,12 +41,17 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 
 			if (pegs.size() == 9)
 			{
-				boards = std::make_unique<TicTacToe3>();
+				board = std::make_unique<TicTacToe3>(pegs,winner);
 			}
-
+			else if (pegs.size() == 16)
+			{
+				board = std::make_unique<TicTacToe4>(pegs, winner);
+				
+			}
+			boards.push_back(std::move(board));
 		}	
-
-	}
-
+		open_file.close();
+	}	
+	
 	return std::vector<std::unique_ptr<TicTacToe>>();
 }
