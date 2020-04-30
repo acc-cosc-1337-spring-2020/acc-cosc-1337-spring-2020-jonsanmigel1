@@ -26,10 +26,12 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 
 	while (open_file.is_open())
 	{
+		
 		std::vector<std::string> pegs;
 		std::string line;
 
-		while (open_file >>line)
+		//while (open_file >>line)
+		while (getline(open_file, line))
 		{
 			for (int ch = 0; ch<line.size()-1; ch++)
 			{
@@ -38,16 +40,18 @@ std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 			}
 			std::string winner = pegs[-1];// last item in the vector of string
 			std::unique_ptr<TicTacToe> board;
-
+			
 			if (pegs.size() == 9)
 			{
 				board = std::make_unique<TicTacToe3>(pegs,winner);
+				
 			}
 			else if (pegs.size() == 16)
 			{
 				board = std::make_unique<TicTacToe4>(pegs, winner);
 				
 			}
+			
 			boards.push_back(std::move(board));
 		}	
 		open_file.close();

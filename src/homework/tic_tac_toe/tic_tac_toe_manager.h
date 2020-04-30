@@ -9,6 +9,7 @@
 #include <string>
 #include <functional>
 #include <memory>
+#include "tic_tac_toe_data.h"
 using std::cout;
 using std::unique_ptr;
 using std::make_unique;
@@ -17,14 +18,16 @@ using std::make_unique;
 class TicTacToeManager
 {
 public:
+	TicTacToeManager() = default;
+	TicTacToeManager(const TicTacToeData& tttd);
 	void save_game(std::unique_ptr<TicTacToe> &b);
-	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);//May need to add const back
+	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);
 	void get_winner_total(int& x, int &o, int &t);
 
 private:
 	std::vector<unique_ptr<TicTacToe>> games;
-	//std::vector<std::reference_wrapper<TicTacToe>> games;
-	//std::vector<TicTacToe> games;
+	TicTacToeData data;
+	
 	void update_winner_count(std::string winner);
 	int x_win{ 0 };
 	int o_win = { 0 };

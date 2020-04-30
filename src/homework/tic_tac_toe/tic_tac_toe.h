@@ -14,11 +14,11 @@ class TicTacToe
 public:
 	TicTacToe(int s) :pegs(s*s, " ") {}
 	TicTacToe(std::vector<string> p, std::string w) :pegs(p),winner(w) {}
-
+	//hw11
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int position);
-	const std::vector<string> get_pegs() { return pegs; }
+	const std::vector<string> get_pegs() { return pegs; }//hw 11
 
 	
 	

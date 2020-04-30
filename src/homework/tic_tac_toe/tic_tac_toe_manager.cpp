@@ -27,7 +27,13 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	return out;
 	// TODO: insert return statement here
 }
-//Note i removed const from save game //added &in front of b
+TicTacToeManager::TicTacToeManager(const TicTacToeData &tttd)
+	:games{tttd.get_games}
+{
+	
+}
+
+
 void TicTacToeManager::save_game( std::unique_ptr<TicTacToe> &b)
 {
 	update_winner_count(b->get_winner());
