@@ -3,6 +3,9 @@
 #include "vector.h"
 #include "vector.h"
 #include "vector.h"
+#include "vector.h"
+#include "vector.h"
+#include "vector.h"
 #include <iostream>
 using std::cout;
 /*
@@ -61,7 +64,7 @@ Point the v.nums to nullptr
 */
 Vector::Vector(Vector && v)
 
-	: size{ v.size }, nums{ v.nums }
+	: size{ v.size }, nums{ v.nums },space{size}
 	{
 		v.size = 0;
 		v.nums = nullptr;
@@ -89,6 +92,57 @@ Vector & Vector::operator=(Vector && v)
 
 
 
+//Make sure new allocation is greater than space
+//Create temporary dynamic array of size new_allocation
+//Copy value from old memory to temporary array 
+//Delete old/current memory array 
+//Set nums to temporary memory array
+//Set space = new allocation 
+void Vector::Reserve(size_t new_allocation)
+{
+	if (new_allocation <= space)
+	{
+		return;
+	}
+	int *temp = new int[new_allocation];
+
+	for (size_t i= 0; i < size; ++i)
+	{
+		temp[i] = nums[i];
+
+	}
+	delete[] nums;
+	nums = temp;
+	space = new_allocation;
+
+}
+//Reserve space
+//INitialize elements values beyond size to 0
+void Vector::Resize(size_t new_size)
+{
+	Reserve(new_size);
+	for (size_t i = size; i < new_size; ++i)
+	{
+		nums[i] = 0;
+		
+	}
+	size = new_size;
+}
+
+void Vector::Push_back(int value)
+{
+	if (space == 0)
+	{
+		Reserve(RESERVE_DEFAULT_SIZE);
+	}
+	else if(size == space)
+	{
+		Reserve(space * RESERVE_DEFAULT_MULTIPLIER);
+
+	}
+	nums[size] = value;
+	++size;
+}
 
 //release dynamic memory
 //dealocate memory
