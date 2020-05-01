@@ -23,7 +23,7 @@ public:
 	void save_game(std::unique_ptr<TicTacToe> &b);
 	friend std::ostream &operator<<(std::ostream &out, const TicTacToeManager &manager);
 	void get_winner_total(int& x, int &o, int &t);
-
+	~TicTacToeManager();
 private:
 	std::vector<unique_ptr<TicTacToe>> games;
 	TicTacToeData data;
