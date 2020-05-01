@@ -1,6 +1,7 @@
 
 #include "tic_tac_toe_manager.h"
 //#include "tic_tac_toe.h"
+//#include "tic_tac_toe.h"
 #include <functional>
 
 //cpp
@@ -28,9 +29,12 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	// TODO: insert return statement here
 }
 TicTacToeManager::TicTacToeManager(const TicTacToeData &tttd)
-	:games{tttd.get_games}
+	:games{tttd.get_games }
 {
-	
+	for (auto &game : games)
+	{
+		update_winner_count(winner);
+	}
 }
 
 

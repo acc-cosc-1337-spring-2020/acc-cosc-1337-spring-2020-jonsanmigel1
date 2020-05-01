@@ -21,7 +21,7 @@ void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs
 
 std::vector<std::unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
-	std::unique_ptr<TicTacToe> boards;
+	std::vector<std::unique_ptr<TicTacToe>> boards;
 	std::ifstream open_file(file_name); //create file handle object
 
 	while (open_file.is_open())
