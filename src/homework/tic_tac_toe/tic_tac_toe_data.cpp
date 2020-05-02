@@ -3,7 +3,7 @@
 #include "tic_tac_toe_4.h"
 //cpp
 
-void TicTacToeData::save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs)
+void TicTacToeData::save_games(const std::vector<std::unique_ptr<TicTacToe>>& pgs)
 {
 	std::ofstream file_out(file_name, std::ios_base::trunc);
 	

@@ -12,7 +12,7 @@ using std::make_unique;
 class TicTacToeData
 {
 public:
-	void save_pegs(const std::vector<std::unique_ptr<TicTacToe>>& pgs);
+	void save_games(const std::vector<std::unique_ptr<TicTacToe>>& pgs);
 	std::vector<std::unique_ptr<TicTacToe>> get_games();
 
 private:

@@ -28,15 +28,14 @@ std::ostream & operator<<(std::ostream &out, const TicTacToeManager & manager)
 	return out;
 	// TODO: insert return statement here
 }
-TicTacToeManager::TicTacToeManager(const TicTacToeData &tttd)
-	:games{tttd.get_games }
+TicTacToeManager::TicTacToeManager( TicTacToeData &tttd)	
 {
+	games = tttd.get_games();
 	for (auto &game : games)
 	{
-		
-		update_winner_count(game->get_winner);
-		
+		game.get()->get_winner();
 	}
+	
 }
 
 
@@ -56,7 +55,7 @@ void TicTacToeManager::get_winner_total(int & x, int & o, int & t)
 
 TicTacToeManager::~TicTacToeManager()
 {
-	save_game();
+	data.save_games(games);
 }
 
 void TicTacToeManager::update_winner_count(std::string winner)

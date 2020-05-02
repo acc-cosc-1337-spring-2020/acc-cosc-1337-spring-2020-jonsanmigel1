@@ -2,6 +2,7 @@
 #include "tic_tac_toe_manager.h"
 #include "tic_tac_toe_3.h"
 #include "tic_tac_toe_4.h" 
+#include "tic_tac_toe_data.h"
 #include <iostream>
 using std::unique_ptr;
 using std::make_unique;
@@ -15,11 +16,13 @@ int main()
 	string another_game;
 	int value = 0;
 
-	unique_ptr<TicTacToeManager> manager= make_unique<TicTacToeManager>();
+	//unique_ptr<TicTacToeManager> manager= make_unique<TicTacToeManager>();
+	TicTacToeData data;
+	unique_ptr<TicTacToeManager> manager = make_unique<TicTacToeManager>(data);
 	bool error;
-	//int version_game;
+	
 	int game_choice;
-	//std::vector <std::reference_wrapper<TicTacToe>> games;
+	
 	do
 	{
 		unique_ptr<TicTacToe>thegame;
