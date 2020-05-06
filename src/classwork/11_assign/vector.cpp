@@ -8,17 +8,24 @@
 #include "vector.h"
 #include <iostream>
 using std::cout;
+template<typename T>
 /*
 Initialize nums to size dynamic array.
 Initialize each array element to 0.
 */
-Vector::Vector(size_t sz)
-	: size{ sz }, nums{ new int[sz] }
+Vector<T>::Vector(size_t sz)
+	: size{ sz }, nums{ new T[sz] }
 {
 	for (size_t i = 0; i < sz; ++i)
 	{
 		nums[i] = 0;
 	}
+}
+template<typename T>
+Vector<T>::Vector()
+	:size{0},nums{nullptr },space{0}
+{
+
 }
 
 /*
@@ -26,8 +33,9 @@ Vector::Vector(size_t sz)
  Create new dynamic memory array
  Initialize array elements to the v.nums array values
 */
-Vector::Vector(const Vector & v)
-	: size{ v.size }, nums{ new int[v.size] }
+template<typename T>
+Vector<T>::Vector(const Vector<T> & v)
+	: size{ v.size }, nums{ new T[v.size] }
 {
 	for (size_t i = 0; i < size; ++i)
 	{
@@ -40,11 +48,22 @@ Vector::Vector(const Vector & v)
 //Point v2 nums array to temp array
 //Set v2 size to v1 size
 //Return a self cop of this vector
-
-Vector & Vector::operator=(const Vector & v)
+template<typename T>
+Vector<T> & Vector<T>::operator=(const Vector<T> & v)
 {
-	int* temp = new int[v.size];
-
+	if (this == &v)//prevent self copy
+	{
+		return *this;
+	}
+	if (v.size <= space)
+	{
+		for (size_t i = 0; i < v.size; i++)
+		{
+			nums[i] = v[i];
+		}
+		return *this;
+	}
+	T* temp = new int[v.size];/////////////////////////////////////
 	for (size_t i = 0; i < v.size; ++i)
 	{
 		temp[i] = v[i];
@@ -62,7 +81,8 @@ Get the dynamic memory from v
 get the size from v 
 Point the v.nums to nullptr
 */
-Vector::Vector(Vector && v)
+template<typename T>
+Vector<T>::Vector(Vector<T> && v)
 
 	: size{ v.size }, nums{ v.nums },space{size}
 	{
@@ -78,7 +98,8 @@ Point v.nums to null ptr
 set v.size to 0
 
 */
-Vector & Vector::operator=(Vector && v)
+template<typename T>
+Vector<T> & Vector<T>::operator=(Vector<T> && v)
 {
 	delete nums;
 	nums = v.nums;
@@ -98,13 +119,14 @@ Vector & Vector::operator=(Vector && v)
 //Delete old/current memory array 
 //Set nums to temporary memory array
 //Set space = new allocation 
-void Vector::Reserve(size_t new_allocation)
+template<typename T>
+void Vector<T>::Reserve(size_t new_allocation)
 {
 	if (new_allocation <= space)
 	{
 		return;
 	}
-	int *temp = new int[new_allocation];
+	T *temp = new T[new_allocation];
 
 	for (size_t i= 0; i < size; ++i)
 	{
@@ -118,7 +140,8 @@ void Vector::Reserve(size_t new_allocation)
 }
 //Reserve space
 //INitialize elements values beyond size to 0
-void Vector::Resize(size_t new_size)
+template<typename T>
+void Vector<T>::Resize(size_t new_size)
 {
 	Reserve(new_size);
 	for (size_t i = size; i < new_size; ++i)
@@ -128,8 +151,8 @@ void Vector::Resize(size_t new_size)
 	}
 	size = new_size;
 }
-
-void Vector::Push_back(int value)
+template<typename T>
+void Vector<T>::Push_back(T value)
 {
 	if (space == 0)
 	{
@@ -137,31 +160,35 @@ void Vector::Push_back(int value)
 	}
 	else if(size == space)
 	{
-		Reserve(space * RESERVE_DEFAULT_MULTIPLIER);
+		Resize(space * RESERVE_DEFAULT_MULTIPLIER);
 
 	}
 	nums[size] = value;
 	++size;
 }
+template class Vector<int>;
+template class Vector<double>;
 
 //release dynamic memory
 //dealocate memory
-Vector::~Vector()
+template<typename T>
+Vector<T>::~Vector()
 {
 	std::cout << "Memory has been released\n";
 	delete[] nums;
 }
 
 //free function
+template<typename T>
 void use_vector()
 {
-	Vector * v1= new Vector(3);
+	Vector<int>* v1 = new Vector<int>(3)
 	delete v1;
 	v1 = nullptr;//point to nothing
 
 }
-
-Vector get_vector()
+template<typename T>
+Vector<T> get_vector()
 {
 	Vector v(3);
 	return v;
